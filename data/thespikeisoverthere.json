@@ -2,17 +2,9 @@
     "id": 589977211,
     "name": "thespikeisoverthere",
     "author": "BranSilver",
-    "creators": ["Creator1", "Creator2", "Creator3"],
+    "creators": [BranSilver],
     "verifier": "mrMonky300",
     "verification": "https://youtu.be/DHnI70flElU",
     "percentToQualify": 100,
     "password": "Not Copyable",
     "records": [
-        {
-            "user": "none",
-            "link": "none",
-            "percent": none,
-            "hz": none
-        }
-    ]
-}
