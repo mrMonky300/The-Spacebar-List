@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/DHnI70flElU",
     "percentToQualify": 100,
     "password": "Free To Copy",
-    "records": ["100% Ovenr1n"
+    "records": {
+    "user": "Ovenr1n",
+    "link": "https://www.youtube.com/watch?v=Y0ET_CAxGO4",
+    "percent": 100,
+    "hz": 1000,
+    "mobile": false
+}
     ]
 }
