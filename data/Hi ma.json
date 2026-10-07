@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/yoPlaD-GXA4?si=Gc3bz68REn9zuf8D",
     "percentToQualify": "54",
     "password": "Copyable",
-    "records": [
+    "records": [{
+    "user": "PurplePlum2",
+    "link": "https://www.youtube.com/watch?v=aei8FwpfLyw",
+    "percent": 76,
+    "hz": 100,
+    "mobile": false
+}
     ]
 }
