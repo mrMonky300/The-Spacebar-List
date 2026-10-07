@@ -7,6 +7,12 @@
     "verification": "https://www.youtube.com/watch?v=InjVoqGQ7XY",
     "percentToQualify": "100",
     "password": "Locked",
-    "records": [
+    "records": [{
+    "user": "kristalplayz",
+    "link": "https://youtu.be/eN_PSgsA7AQ",
+    "percent": 100,
+    "hz": 240,
+    "mobile": false
+}
     ]
 }
