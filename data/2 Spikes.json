@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/upkIM9f3XMg",
     "percentToQualify": "100",
     "password": "Non Copyable",
-    "records": [
+    "records": [{
+    "user": "Elyxyt",
+    "link": "https://youtu.be/apL8pxQrq8w?si=nKdOMFehgYSt-Irc",
+    "percent": 100,
+    "hz": 360,
+    "mobile": false
+}
     ]
 }
