@@ -7,6 +7,13 @@
     "verification": "https://youtu.be/JPrOEh4T3PQ?si=7Rq7ezXw8XZVxemy",
     "percentToQualify": "80",
     "password": "Copyable",
-    "records": [
+    "records": [{
+    "user": "Chillen",
+    "link": "https://youtube.com/shorts/i6kud59rcxo",
+    "percent": 100,
+    "hz": 360,
+    "mobile": false
+}
+
     ]
 }
