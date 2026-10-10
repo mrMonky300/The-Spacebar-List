@@ -7,6 +7,14 @@
     "verification": "https://youtu.be/ten9NyaHKP8?si=wrqEUNm9j572o00H",
     "percentToQualify": "63",
     "password": "Locked",
-    "records": [
+    "records": [{
+    "user": "Powstick",
+    "link": "https://www.youtube.com/watch?v=NaVZfgcGF8w",
+    "percent": 100,
+    "hz": 144,
+    "mobile": false
+}
+
     ]
+
 }
