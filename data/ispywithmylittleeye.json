@@ -7,6 +7,13 @@
     "verification": "https://www.youtube.com/watch?v=ZAma7yz3KAY",
     "percentToQualify": "70",
     "password": "Copyable",
-    "records": [
+    "records": [{
+    "user": "Voxicat",
+    "link": "https://www.youtube.com/watch?v=NaVZfgcGF8w",
+    "percent": 100,
+    "hz": 144,
+    "mobile": false
+}
+
     ]
 }
