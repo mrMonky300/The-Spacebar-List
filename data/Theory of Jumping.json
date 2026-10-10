@@ -7,6 +7,12 @@
     "verification": "https://youtu.be/a0xXJea1P0k",
     "percentToQualify": "70",
     "password": "Locked",
-    "records": [
+    "records": [{
+    "user": "Operus",
+    "link": "https://www.youtube.com/watch?v=SIf6_DfmDik",
+    "percent": 100,
+    "hz": 120,
+    "mobile": false
+}
     ]
 }
