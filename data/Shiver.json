@@ -5,8 +5,15 @@
     "creators": ["SpKale"],
     "verifier": "Operus",
     "verification": "https://www.youtube.com/watch?v=pca0z2_fBfg",
-    "percentToQualify": "56",
+    "percentToQualify": "67",
     "password": "Copyable",
-    "records": [
+    "records": [{
+    "user": "GriddyGMD",
+    "link": "https://www.youtube.com/watch?v=axICjd5Okvw",
+    "percent": 100,
+    "hz": 200,
+    "mobile": false
+}
+
     ]
 }
