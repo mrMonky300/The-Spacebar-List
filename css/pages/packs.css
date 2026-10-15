@@ -653,15 +653,32 @@ main.page-packs button:focus-visible {
     outline: 2px solid var(--packs-text);
     outline-offset: 3px;
 }
+main.page-packs .difficulty-section.bronze {
+    --difficulty-color: #CD7F32;
+}
 
-main.page-packs .difficulty-section.bronze,
-main.page-packs .difficulty-section.silver,
-main.page-packs .difficulty-section.iron,
-main.page-packs .difficulty-section.gold,
-main.page-packs .difficulty-section.diamond,
-main.page-packs .difficulty-section.ruby,
+main.page-packs .difficulty-section.silver {
+    --difficulty-color: #C0C0C0;
+}
+
+main.page-packs .difficulty-section.iron {
+    --difficulty-color: #777D86;
+}
+
+main.page-packs .difficulty-section.gold {
+    --difficulty-color: #FFD700;
+}
+
+main.page-packs .difficulty-section.diamond {
+    --difficulty-color: #75DFFF;
+}
+
+main.page-packs .difficulty-section.ruby {
+    --difficulty-color: #E53950;
+}
+
 main.page-packs .difficulty-section.platinum {
-    --difficulty-color: var(--packs-text);
+    --difficulty-color: #E6F7FF;
 }
 
 main.page-packs .difficulty-header .difficulty-icon {
