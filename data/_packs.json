@@ -1,13 +1,13 @@
 [
     {
         "id": 1,
-        "name": "test",
+        "name": "The Main Levels Pack",
         "color": "#DC143C",
         "levels": [
-            "Allegiance",
-            "Cataclysm",
-            "Poltergeist"
+            "Deadlocked",
+            "Clubstep",
+            "Theory of Everything 2"
         ],
-        "difficulty": "Silver"
+        "difficulty": "Bronze"
     }
 ]
