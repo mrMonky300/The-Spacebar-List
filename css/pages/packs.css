@@ -1,24 +1,15 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
 main.page-packs {
     --packs-bg: #ffffff;
-    --packs-text: #171717;
+    --packs-text: #111111;
     --packs-surface: #fafafa;
-    --packs-surface-raised: #ffffff;
-    --packs-muted: #737373;
-    --packs-subtle: #999999;
+    --packs-muted: #666666;
+    --packs-subtle: #8a8a8a;
     --packs-border: #e8e8e8;
-    --packs-border-strong: #d4d4d4;
-    --packs-hover: #f4f4f4;
-    --packs-selected: #eeeeee;
-    --packs-shadow: 0 4px 16px rgba(0, 0, 0, .035);
-    --packs-shadow-hover: 0 6px 20px rgba(0, 0, 0, .06);
-    --packs-radius: 14px;
-    --packs-radius-sm: 10px;
-    --packs-radius-xs: 7px;
-    --packs-font: 'Inter', Arial, sans-serif;
-
+    --packs-border-strong: #d0d0d0;
+    --packs-hover: #f0f0f0;
+    --packs-selected: #e9e9e9;
+    --packs-shadow: 0 12px 34px rgba(0, 0, 0, .055);
     display: block !important;
     width: 100% !important;
     max-width: none !important;
@@ -26,71 +17,29 @@ main.page-packs {
     min-height: calc(100vh - 4rem);
     height: auto !important;
     margin: 0 !important;
-    padding: clamp(1rem, 2.2vw, 2rem) !important;
-    overflow: visible !important;
+    padding: clamp(1rem, 2vw, 1.75rem) !important;
     box-sizing: border-box;
+    overflow: visible !important;
     color: var(--packs-text);
     background: var(--packs-bg);
-    font-family: var(--packs-font) !important;
+    font-family: inherit;
     font-size: 14px;
-    line-height: 1.55;
-    letter-spacing: -.015em;
+    line-height: 1.5;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-/*
- * Theme support.
- * Supports common class and data-attribute theme conventions.
- */
-body.dark main.page-packs,
-body.dark-mode main.page-packs,
-body.theme-dark main.page-packs,
-body[data-theme="dark"] main.page-packs,
-body[data-bs-theme="dark"] main.page-packs,
-html.dark main.page-packs,
-html.dark-mode main.page-packs,
-html.theme-dark main.page-packs,
-html[data-theme="dark"] main.page-packs,
-html[data-bs-theme="dark"] main.page-packs,
-.dark main.page-packs,
-.dark-mode main.page-packs,
-.theme-dark main.page-packs,
-[data-theme="dark"] main.page-packs,
-[data-bs-theme="dark"] main.page-packs {
-    --packs-bg: #101010;
-    --packs-text: #f2f2f2;
-    --packs-surface: #151515;
-    --packs-surface-raised: #1a1a1a;
-    --packs-muted: #a3a3a3;
-    --packs-subtle: #777777;
+main.page-packs.dark {
+    --packs-bg: #090909;
+    --packs-text: #f5f5f5;
+    --packs-surface: #141414;
+    --packs-muted: #a5a5a5;
+    --packs-subtle: #737373;
     --packs-border: #292929;
-    --packs-border-strong: #3a3a3a;
+    --packs-border-strong: #414141;
     --packs-hover: #202020;
-    --packs-selected: #262626;
-    --packs-shadow: 0 4px 16px rgba(0, 0, 0, .12);
-    --packs-shadow-hover: 0 6px 20px rgba(0, 0, 0, .2);
-}
-
-/* Automatic support for system dark mode, unless the site sets a theme class. */
-@media (prefers-color-scheme: dark) {
-    html:not(.light):not(.light-mode):not([data-theme="light"]):not([data-bs-theme="light"])
-    body:not(.light):not(.light-mode):not([data-theme="light"]):not([data-bs-theme="light"])
-    main.page-packs {
-        --packs-bg: #101010;
-        --packs-text: #f2f2f2;
-        --packs-surface: #151515;
-        --packs-surface-raised: #1a1a1a;
-        --packs-muted: #a3a3a3;
-        --packs-subtle: #777777;
-        --packs-border: #292929;
-        --packs-border-strong: #3a3a3a;
-        --packs-hover: #202020;
-        --packs-selected: #262626;
-        --packs-shadow: 0 4px 16px rgba(0, 0, 0, .12);
-        --packs-shadow-hover: 0 6px 20px rgba(0, 0, 0, .2);
-    }
+    --packs-selected: #292929;
+    --packs-shadow: 0 12px 34px rgba(0, 0, 0, .32);
 }
 
 main.page-packs *,
@@ -99,31 +48,21 @@ main.page-packs *::after {
     box-sizing: border-box;
 }
 
-main.page-packs :is(
-    h1, h2, h3, h4, p, span, div, a, label,
-    button, input, textarea, select, small, strong,
-    em, li, section, article
-) {
-    font-family: var(--packs-font) !important;
-}
-
 main.page-packs button {
-    font-size: inherit;
-    letter-spacing: inherit;
+    font: inherit;
 }
 
 main.page-packs h1,
 main.page-packs h2,
-main.page-packs h3,
 main.page-packs p {
     overflow-wrap: anywhere;
 }
 
 main.page-packs .packs-layout {
     display: grid !important;
-    grid-template-columns: minmax(300px, .9fr) minmax(0, 1.6fr) !important;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.6fr) !important;
     align-items: start;
-    gap: clamp(1rem, 2vw, 1.75rem);
+    gap: clamp(1rem, 1.8vw, 1.75rem);
     width: 100% !important;
     max-width: none !important;
     min-width: 0 !important;
@@ -137,7 +76,7 @@ main.page-packs .packs-sidebar {
     flex-direction: column;
     min-width: 0;
     min-height: 0;
-    gap: 1.15rem;
+    gap: 1rem;
 }
 
 main.page-packs .packs-sidebar-header {
@@ -145,26 +84,25 @@ main.page-packs .packs-sidebar-header {
     align-items: end;
     justify-content: space-between;
     margin: 0;
-    padding: 0 0 1rem;
+    padding: 0 0 .85rem;
     border-bottom: 1px solid var(--packs-border);
 }
 
 main.page-packs .packs-sidebar-header h1 {
     margin: 0;
     color: var(--packs-text);
-    font-size: clamp(1.5rem, 2vw, 1.9rem);
+    font-size: clamp(1.35rem, 1.8vw, 1.7rem);
     line-height: 1.15;
-    font-weight: 800;
-    letter-spacing: -.055em;
+    font-weight: 750;
+    letter-spacing: -.045em;
 }
 
 main.page-packs .packs-sidebar-header p {
-    margin: .45rem 0 0;
+    margin: .35rem 0 0;
     color: var(--packs-muted);
-    font-size: .8rem;
-    line-height: 1.5;
-    font-weight: 400;
-    letter-spacing: -.01em;
+    font-size: .76rem;
+    line-height: 1.4;
+    font-weight: 500;
 }
 
 main.page-packs .difficulty-grid {
@@ -172,7 +110,7 @@ main.page-packs .difficulty-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: minmax(0, auto);
     align-content: start;
-    gap: .8rem;
+    gap: .75rem;
     min-width: 0;
     min-height: 0;
     flex: none;
@@ -184,59 +122,59 @@ main.page-packs .difficulty-section {
     display: flex;
     flex-direction: column;
     min-width: 0;
-    min-height: 150px;
+    min-height: 145px;
     height: auto;
     overflow: hidden;
     border: 1px solid var(--packs-border);
-    border-radius: var(--packs-radius);
+    border-radius: 12px;
     background: var(--packs-surface);
-    transition: border-color .2s ease, background .2s ease;
+    transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
 main.page-packs .difficulty-section:hover {
     border-color: var(--packs-border-strong);
-    background: var(--packs-surface-raised);
+    box-shadow: 0 5px 18px color-mix(in srgb, var(--packs-text) 5%, transparent);
+    transform: translateY(-1px);
 }
 
 main.page-packs .difficulty-header {
     display: flex;
     align-items: center;
-    gap: .7rem;
+    gap: .65rem;
     flex-shrink: 0;
-    padding: .95rem;
+    padding: .8rem .85rem .7rem;
     border-bottom: 1px solid var(--packs-border);
 }
 
 main.page-packs .difficulty-icon {
     display: grid;
     place-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    flex: 0 0 2.1rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    flex: 0 0 1.8rem;
     border: 1px solid var(--packs-border);
-    border-radius: 9px;
+    border-radius: 7px;
     background: var(--packs-hover);
     color: var(--packs-text);
-    font-size: .75rem;
-    font-weight: 700;
+    font-size: .65rem;
 }
 
 main.page-packs .difficulty-header h2 {
     margin: 0;
     color: var(--packs-text);
-    font-size: .85rem;
-    line-height: 1.35;
+    font-size: .82rem;
+    line-height: 1.25;
     font-weight: 700;
-    letter-spacing: -.025em;
+    letter-spacing: -.015em;
 }
 
 main.page-packs .difficulty-header span {
     display: block;
-    margin-top: .2rem;
+    margin-top: .18rem;
     color: var(--packs-muted);
-    font-size: .7rem;
-    line-height: 1.4;
-    font-weight: 400;
+    font-size: .66rem;
+    line-height: 1.3;
+    font-weight: 450;
 }
 
 main.page-packs .difficulty-list {
@@ -247,7 +185,7 @@ main.page-packs .difficulty-list {
     gap: .35rem;
     min-width: 0;
     min-height: 0;
-    padding: .6rem;
+    padding: .55rem;
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -273,22 +211,23 @@ main.page-packs .pack-card {
     align-items: center;
     width: 100%;
     min-width: 0;
-    min-height: 50px;
+    min-height: 48px;
     flex: 0 0 auto;
-    gap: .7rem;
-    padding: .65rem .7rem;
+    gap: .65rem;
+    padding: .55rem .65rem;
     border: 1px solid transparent;
-    border-radius: var(--packs-radius-sm);
+    border-radius: 8px;
     background: transparent;
     color: var(--packs-text);
     text-align: left;
     cursor: pointer;
-    transition: background .18s ease, border-color .18s ease;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
 }
 
 main.page-packs .pack-card:hover {
     background: var(--packs-hover);
     border-color: var(--packs-border);
+    transform: translateX(2px);
 }
 
 main.page-packs .pack-card.active {
@@ -298,9 +237,9 @@ main.page-packs .pack-card.active {
 }
 
 main.page-packs .pack-color {
-    width: 4px;
-    height: 30px;
-    flex: 0 0 4px;
+    width: 3px;
+    height: 27px;
+    flex: 0 0 3px;
     border-radius: 99px;
     background: var(--packs-text);
 }
@@ -310,49 +249,49 @@ main.page-packs .pack-content {
     flex: 1;
     flex-direction: column;
     min-width: 0;
-    gap: .2rem;
+    gap: .16rem;
 }
 
 main.page-packs .pack-name {
     overflow: hidden;
     color: var(--packs-text);
-    font-size: .83rem;
-    line-height: 1.4;
+    font-size: .82rem;
+    line-height: 1.35;
     font-weight: 650;
-    letter-spacing: -.02em;
+    letter-spacing: -.01em;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 main.page-packs .pack-level-count {
     color: var(--packs-muted);
-    font-size: .69rem;
-    line-height: 1.35;
-    font-weight: 400;
+    font-size: .65rem;
+    line-height: 1.25;
+    font-weight: 450;
 }
 
 main.page-packs .pack-arrow {
     flex: 0 0 auto;
     color: var(--packs-muted);
-    font-size: .95rem;
-    opacity: .7;
+    font-size: .9rem;
+    opacity: .65;
     transition: transform .18s ease, opacity .18s ease;
 }
 
 main.page-packs .pack-card:hover .pack-arrow {
     opacity: 1;
-    transform: translateX(2px);
+    transform: translateX(3px);
 }
 
 main.page-packs .difficulty-empty {
     display: grid;
     flex: 1;
     place-items: center;
-    min-height: 50px;
-    padding: .8rem;
+    min-height: 48px;
+    padding: .7rem;
     color: var(--packs-subtle);
-    font-size: .75rem;
-    font-weight: 400;
+    font-size: .7rem;
+    font-weight: 450;
 }
 
 main.page-packs .pack-detail {
@@ -365,14 +304,13 @@ main.page-packs .pack-detail {
     min-width: 0 !important;
     min-height: calc(100vh - 7rem);
     height: auto !important;
-    padding: clamp(1.25rem, 2.2vw, 2rem);
+    padding: clamp(1.1rem, 2vw, 1.8rem);
     overflow: hidden;
     border: 1px solid var(--packs-border);
-    border-radius: var(--packs-radius);
-    background: var(--packs-surface);
-    box-shadow: var(--packs-shadow);
+    border-radius: 14px;
+    background: var(--packs-bg);
+    box-shadow: none;
     color: var(--packs-text);
-    transition: border-color .2s ease, background .2s ease;
 }
 
 main.page-packs .pack-detail-header {
@@ -381,22 +319,23 @@ main.page-packs .pack-detail-header {
     justify-content: space-between;
     flex-shrink: 0;
     gap: 1rem;
-    margin: 0 0 1.2rem;
+    margin: 0 0 1rem;
 }
 
 main.page-packs .pack-detail-title {
     display: flex;
     align-items: center;
     min-width: 0;
-    gap: 1rem;
+    gap: .85rem;
 }
 
 main.page-packs .pack-detail-dot {
-    width: 5px;
-    height: 42px;
-    flex: 0 0 5px;
+    width: 10px;
+    height: 34px;
+    flex: 0 0 10px;
     border-radius: 99px;
     background: var(--packs-text);
+    box-shadow: none;
 }
 
 main.page-packs .pack-detail-title h1 {
@@ -404,20 +343,20 @@ main.page-packs .pack-detail-title h1 {
     margin: 0;
     overflow: hidden;
     color: var(--packs-text);
-    font-size: clamp(1.45rem, 2.1vw, 2rem);
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
     line-height: 1.15;
-    font-weight: 800;
-    letter-spacing: -.055em;
+    font-weight: 760;
+    letter-spacing: -.05em;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 main.page-packs .pack-detail-title p {
-    margin: .4rem 0 0;
+    margin: .3rem 0 0;
     color: var(--packs-muted);
-    font-size: .8rem;
-    line-height: 1.5;
-    font-weight: 400;
+    font-size: .76rem;
+    line-height: 1.35;
+    font-weight: 500;
 }
 
 main.page-packs .pack-detail-completion {
@@ -425,40 +364,40 @@ main.page-packs .pack-detail-completion {
     flex-direction: column;
     align-items: flex-end;
     flex-shrink: 0;
-    gap: .3rem;
+    gap: .2rem;
 }
 
 main.page-packs .pack-detail-completion strong {
     color: var(--packs-text);
-    font-size: 1.8rem;
+    font-size: 1.65rem;
     line-height: 1;
-    font-weight: 800;
-    letter-spacing: -.055em;
+    font-weight: 750;
+    letter-spacing: -.05em;
     font-variant-numeric: tabular-nums;
 }
 
 main.page-packs .pack-detail-completion span {
     color: var(--packs-muted);
-    font-size: .7rem;
-    line-height: 1.4;
+    font-size: .67rem;
+    line-height: 1.3;
     font-weight: 500;
 }
 
 main.page-packs .pack-progress {
     width: 100%;
-    height: 6px;
+    height: 5px;
     flex-shrink: 0;
-    margin: 0 0 1.6rem;
+    margin: 0 0 1.5rem;
     overflow: hidden;
     border-radius: 99px;
-    background: color-mix(in srgb, var(--packs-text) 10%, transparent);
+    background: color-mix(in srgb, var(--packs-text) 11%, transparent);
 }
 
 main.page-packs .pack-progress-fill {
     height: 100%;
     border-radius: inherit;
     background: var(--packs-text);
-    transition: width .5s cubic-bezier(.2, .75, .25, 1);
+    transition: width .45s cubic-bezier(.2, .75, .25, 1);
 }
 
 main.page-packs .pack-level-section {
@@ -475,30 +414,30 @@ main.page-packs .section-title {
     justify-content: space-between;
     flex-shrink: 0;
     gap: 1rem;
-    margin: 0 0 .8rem;
+    margin: 0 0 .65rem;
 }
 
 main.page-packs .section-title h2 {
     margin: 0;
     color: var(--packs-text);
-    font-size: .95rem;
-    line-height: 1.4;
-    font-weight: 750;
-    letter-spacing: -.03em;
+    font-size: .9rem;
+    line-height: 1.3;
+    font-weight: 720;
+    letter-spacing: -.02em;
 }
 
 main.page-packs .section-title span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 2rem;
-    min-height: 1.65rem;
-    padding: .2rem .55rem;
+    min-width: 1.8rem;
+    min-height: 1.45rem;
+    padding: .15rem .45rem;
     border: 1px solid var(--packs-border);
-    border-radius: 7px;
+    border-radius: 6px;
     background: var(--packs-hover);
     color: var(--packs-muted);
-    font-size: .7rem;
+    font-size: .65rem;
     line-height: 1;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
@@ -508,7 +447,7 @@ main.page-packs .pack-levels {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    gap: .4rem;
+    gap: .35rem;
     min-height: 0;
     overflow-x: hidden;
     overflow-y: auto;
@@ -521,20 +460,21 @@ main.page-packs .pack-level {
     align-items: center;
     width: 100%;
     min-width: 0;
-    min-height: 46px;
+    min-height: 43px;
     flex: 0 0 auto;
-    gap: 1rem;
-    padding: .7rem .85rem;
+    gap: .9rem;
+    padding: .65rem .75rem;
     border: 1px solid transparent;
-    border-radius: var(--packs-radius-sm);
+    border-radius: 8px;
     background: transparent;
     color: var(--packs-text);
     text-align: left;
     cursor: pointer;
-    transition: background .18s ease, border-color .18s ease;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
 }
 
 main.page-packs .pack-level:hover {
+    transform: translateX(3px);
     border-color: var(--packs-border);
     background: var(--packs-hover);
 }
@@ -543,9 +483,9 @@ main.page-packs .pack-level-rank {
     width: 2rem;
     flex: 0 0 2rem;
     color: var(--packs-muted);
-    font-size: .72rem;
-    line-height: 1.3;
-    font-weight: 600;
+    font-size: .68rem;
+    line-height: 1.2;
+    font-weight: 550;
     font-variant-numeric: tabular-nums;
 }
 
@@ -554,10 +494,10 @@ main.page-packs .pack-level-name {
     min-width: 0;
     overflow: hidden;
     color: var(--packs-text);
-    font-size: .85rem;
-    line-height: 1.45;
-    font-weight: 600;
-    letter-spacing: -.015em;
+    font-size: .84rem;
+    line-height: 1.4;
+    font-weight: 620;
+    letter-spacing: -.01em;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
@@ -565,26 +505,26 @@ main.page-packs .pack-level-name {
 main.page-packs .pack-level-arrow {
     flex: 0 0 auto;
     color: var(--packs-muted);
-    opacity: .7;
+    opacity: .65;
     transition: transform .18s ease, opacity .18s ease;
 }
 
 main.page-packs .pack-level:hover .pack-level-arrow {
     opacity: 1;
-    transform: translateX(2px);
+    transform: translateX(3px);
 }
 
 main.page-packs .pack-victors-section {
     flex: 0 0 auto;
-    margin-top: 1.6rem;
-    padding-top: 1.2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.15rem;
     border-top: 1px solid var(--packs-border);
 }
 
 main.page-packs .pack-completed-players {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
-    gap: .55rem;
+    gap: .45rem;
     max-height: 12rem;
     overflow-x: hidden;
     overflow-y: auto;
@@ -596,10 +536,10 @@ main.page-packs .pack-completed-player {
     display: flex;
     align-items: center;
     min-width: 0;
-    gap: .65rem;
-    padding: .6rem .7rem;
+    gap: .6rem;
+    padding: .5rem .6rem;
     border: 1px solid var(--packs-border);
-    border-radius: var(--packs-radius-sm);
+    border-radius: 8px;
     background: var(--packs-hover);
     transition: background .18s ease, border-color .18s ease;
 }
@@ -612,14 +552,14 @@ main.page-packs .pack-completed-player:hover {
 main.page-packs .victor-avatar {
     display: grid;
     place-items: center;
-    width: 2rem;
-    height: 2rem;
-    flex: 0 0 2rem;
+    width: 1.85rem;
+    height: 1.85rem;
+    flex: 0 0 1.85rem;
     border: 1px solid var(--packs-border-strong);
     border-radius: 50%;
     background: var(--packs-text);
     color: var(--packs-bg);
-    font-size: .72rem;
+    font-size: .7rem;
     line-height: 1;
     font-weight: 750;
 }
@@ -628,8 +568,8 @@ main.page-packs .victor-name {
     min-width: 0;
     overflow: hidden;
     color: var(--packs-text);
-    font-size: .76rem;
-    line-height: 1.4;
+    font-size: .74rem;
+    line-height: 1.3;
     font-weight: 600;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -638,16 +578,16 @@ main.page-packs .victor-name {
 main.page-packs .pack-no-victors {
     display: grid;
     place-items: center;
-    min-height: 64px;
-    padding: 1rem;
+    min-height: 58px;
+    padding: .9rem;
     border: 1px dashed var(--packs-border-strong);
-    border-radius: var(--packs-radius-sm);
+    border-radius: 8px;
     background: transparent;
     color: var(--packs-muted);
     text-align: center;
-    font-size: .76rem;
-    line-height: 1.5;
-    font-weight: 400;
+    font-size: .72rem;
+    line-height: 1.4;
+    font-weight: 450;
 }
 
 main.page-packs .empty-detail {
@@ -655,27 +595,23 @@ main.page-packs .empty-detail {
     align-items: center;
     justify-content: center;
     min-height: calc(100vh - 7rem);
-    padding: 2rem;
-    border: 1px solid var(--packs-border);
-    border-radius: var(--packs-radius);
-    background: var(--packs-surface);
     text-align: center;
 }
 
 main.page-packs .empty-detail h2 {
     margin: 0;
     color: var(--packs-text);
-    font-size: 1.5rem;
-    line-height: 1.25;
-    font-weight: 800;
-    letter-spacing: -.045em;
+    font-size: 1.3rem;
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: -.04em;
 }
 
 main.page-packs .empty-detail p {
-    margin: .55rem 0 0;
+    margin: .45rem 0 0;
     color: var(--packs-muted);
-    font-size: .82rem;
-    line-height: 1.6;
+    font-size: .78rem;
+    line-height: 1.5;
 }
 
 main.page-packs button:focus-visible {
@@ -683,62 +619,18 @@ main.page-packs button:focus-visible {
     outline-offset: 3px;
 }
 
-/* Difficulty colors */
-main.page-packs .difficulty-section.bronze {
-    --difficulty-color: #CD7F32;
-}
-
-main.page-packs .difficulty-section.silver {
-    --difficulty-color: #C0C0C0;
-}
-
-main.page-packs .difficulty-section.iron {
-    --difficulty-color: #777D86;
-}
-
-main.page-packs .difficulty-section.gold {
-    --difficulty-color: #FFD700;
-}
-
-main.page-packs .difficulty-section.diamond {
-    --difficulty-color: #75DFFF;
-}
-
-main.page-packs .difficulty-section.ruby {
-    --difficulty-color: #E53950;
-}
-
+main.page-packs .difficulty-section.bronze,
+main.page-packs .difficulty-section.silver,
+main.page-packs .difficulty-section.iron,
+main.page-packs .difficulty-section.gold,
+main.page-packs .difficulty-section.diamond,
+main.page-packs .difficulty-section.ruby,
 main.page-packs .difficulty-section.platinum {
-    --difficulty-color: #E6F7FF;
+    --difficulty-color: var(--packs-text);
 }
 
-/* Difficulty symbol colors */
-main.page-packs .difficulty-section.bronze .difficulty-icon {
-    color: #CD7F32 !important;
-}
-
-main.page-packs .difficulty-section.silver .difficulty-icon {
-    color: #C0C0C0 !important;
-}
-
-main.page-packs .difficulty-section.iron .difficulty-icon {
-    color: #777D86 !important;
-}
-
-main.page-packs .difficulty-section.gold .difficulty-icon {
-    color: #FFD700 !important;
-}
-
-main.page-packs .difficulty-section.diamond .difficulty-icon {
-    color: #75DFFF !important;
-}
-
-main.page-packs .difficulty-section.ruby .difficulty-icon {
-    color: #E53950 !important;
-}
-
-main.page-packs .difficulty-section.platinum .difficulty-icon {
-    color: #E6F7FF !important;
+main.page-packs .difficulty-header .difficulty-icon {
+    color: var(--packs-text);
 }
 
 main.page-packs .pack-color,
@@ -756,6 +648,15 @@ main.page-packs .pack-detail {
     -webkit-tap-highlight-color: transparent;
 }
 
+main.page-packs .difficulty-section {
+    background: var(--packs-surface);
+}
+
+main.page-packs .pack-detail,
+main.page-packs .difficulty-section {
+    box-shadow: none;
+}
+
 main.page-packs .pack-card:active,
 main.page-packs .pack-level:active {
     transform: scale(.99);
@@ -767,9 +668,15 @@ main.page-packs .pack-level:focus-visible {
     outline-offset: -2px;
 }
 
-main.page-packs ::selection {
-    color: var(--packs-bg);
-    background: var(--packs-text);
+@media (prefers-reduced-motion: reduce) {
+    main.page-packs *,
+    main.page-packs *::before,
+    main.page-packs *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
 
 @media (max-width: 1050px) {
@@ -779,15 +686,11 @@ main.page-packs ::selection {
     }
 
     main.page-packs .difficulty-grid {
-        gap: .65rem;
+        gap: .6rem;
     }
 
     main.page-packs .difficulty-section {
-        min-height: 135px;
-    }
-
-    main.page-packs .pack-detail {
-        padding: 1.25rem;
+        min-height: 132px;
     }
 }
 
@@ -808,11 +711,11 @@ main.page-packs ::selection {
 
     main.page-packs .pack-detail {
         position: static;
-        min-height: 560px;
+        min-height: 620px;
     }
 
     main.page-packs .empty-detail {
-        min-height: 280px;
+        min-height: 260px;
     }
 }
 
@@ -821,67 +724,39 @@ main.page-packs ::selection {
         padding: .75rem !important;
     }
 
-    main.page-packs .packs-sidebar-header h1 {
-        font-size: 1.5rem;
-    }
-
     main.page-packs .difficulty-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: .65rem;
+        gap: .55rem;
     }
 
     main.page-packs .difficulty-section {
         min-height: 110px;
-        border-radius: 12px;
     }
 
     main.page-packs .difficulty-header {
-        padding: .75rem;
+        padding: .7rem .75rem .6rem;
     }
 
     main.page-packs .difficulty-list {
-        padding: .5rem;
+        padding: .45rem;
     }
 
     main.page-packs .pack-detail {
-        min-height: 520px;
+        min-height: 560px;
         padding: 1rem;
-        border-radius: 14px;
-    }
-
-    main.page-packs .pack-detail-header {
-        gap: .65rem;
-    }
-
-    main.page-packs .pack-detail-title {
-        gap: .7rem;
+        border-radius: 11px;
     }
 
     main.page-packs .pack-detail-title h1 {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
     }
 
     main.page-packs .pack-detail-completion strong {
-        font-size: 1.45rem;
+        font-size: 1.4rem;
     }
 
     main.page-packs .pack-level {
-        gap: .65rem;
-        padding: .65rem;
-    }
-
-    main.page-packs .pack-completed-players {
-        grid-template-columns: minmax(0, 1fr);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    main.page-packs *,
-    main.page-packs *::before,
-    main.page-packs *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
+        gap: .6rem;
+        padding: .6rem;
     }
 }
