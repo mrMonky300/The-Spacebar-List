@@ -1,0 +1,9 @@
+"records": [
+        {
+            "user": "NAME",
+            "link": "RECORD LINK",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false
+        }
+    ]
