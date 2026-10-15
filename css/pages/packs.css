@@ -3,7 +3,7 @@
 
 main.page-packs {
     --packs-bg: #ffffff;
-    --packs-text: #111111;
+    --packs-text: #171717;
     --packs-surface: #fafafa;
     --packs-surface-raised: #ffffff;
     --packs-muted: #686868;
@@ -125,9 +125,9 @@ main.page-packs .packs-sidebar-header h1 {
     margin: 0;
     color: var(--packs-text);
     font-size: clamp(1.5rem, 2vw, 1.9rem);
-    line-height: 1.15;
+    line-height: 1.2;
     font-weight: 800;
-    letter-spacing: -.065em;
+    letter-spacing: -.06em;
 }
 
 main.page-packs .packs-sidebar-header p {
@@ -136,7 +136,6 @@ main.page-packs .packs-sidebar-header p {
     font-size: .8rem;
     line-height: 1.5;
     font-weight: 400;
-    letter-spacing: -.01em;
 }
 
 main.page-packs .difficulty-grid {
@@ -152,22 +151,49 @@ main.page-packs .difficulty-grid {
 }
 
 main.page-packs .difficulty-section {
-    --difficulty-color: var(--packs-text);
+    --difficulty-color: #777777;
     display: flex;
     flex-direction: column;
     min-width: 0;
-    min-height: 150px;
+    min-height: 145px;
     height: auto;
     overflow: hidden;
-    border: 1px solid var(--packs-border);
+    border: 1px solid color-mix(in srgb, var(--difficulty-color) 30%, var(--packs-border));
     border-radius: var(--packs-radius);
     background: var(--packs-surface);
     transition: border-color .22s ease, background .22s ease, transform .22s ease;
 }
 
+main.page-packs .difficulty-section.bronze {
+    --difficulty-color: #c47a35;
+}
+
+main.page-packs .difficulty-section.silver {
+    --difficulty-color: #aeb8c4;
+}
+
+main.page-packs .difficulty-section.iron {
+    --difficulty-color: #7e8792;
+}
+
+main.page-packs .difficulty-section.gold {
+    --difficulty-color: #d9a928;
+}
+
+main.page-packs .difficulty-section.diamond {
+    --difficulty-color: #40bddd;
+}
+
+main.page-packs .difficulty-section.ruby {
+    --difficulty-color: #df526b;
+}
+
+main.page-packs .difficulty-section.platinum {
+    --difficulty-color: #aa94df;
+}
+
 main.page-packs .difficulty-section:hover {
-    border-color: var(--packs-border-strong);
-    background: var(--packs-surface-raised);
+    border-color: color-mix(in srgb, var(--difficulty-color) 65%, var(--packs-border));
     transform: translateY(-2px);
 }
 
@@ -176,8 +202,9 @@ main.page-packs .difficulty-header {
     align-items: center;
     gap: .7rem;
     flex-shrink: 0;
-    padding: .95rem;
-    border-bottom: 1px solid var(--packs-border);
+    padding: .9rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--difficulty-color) 20%, var(--packs-border));
+    background: color-mix(in srgb, var(--difficulty-color) 7%, var(--packs-surface));
 }
 
 main.page-packs .difficulty-icon {
@@ -186,17 +213,17 @@ main.page-packs .difficulty-icon {
     width: 2.1rem;
     height: 2.1rem;
     flex: 0 0 2.1rem;
-    border: 1px solid var(--packs-border);
+    border: 1px solid color-mix(in srgb, var(--difficulty-color) 35%, var(--packs-border));
     border-radius: 10px;
-    background: var(--packs-hover);
-    color: var(--packs-text);
+    background: color-mix(in srgb, var(--difficulty-color) 13%, var(--packs-surface));
+    color: var(--difficulty-color) !important;
     font-size: .75rem;
     font-weight: 700;
 }
 
 main.page-packs .difficulty-header h2 {
     margin: 0;
-    color: var(--packs-text);
+    color: var(--difficulty-color);
     font-size: .85rem;
     line-height: 1.35;
     font-weight: 700;
@@ -241,6 +268,7 @@ main.page-packs .pack-completed-players::-webkit-scrollbar-thumb {
 }
 
 main.page-packs .pack-card {
+    --pack-color: var(--difficulty-color);
     position: relative;
     display: flex;
     align-items: center;
@@ -260,15 +288,15 @@ main.page-packs .pack-card {
 }
 
 main.page-packs .pack-card:hover {
-    background: var(--packs-hover);
-    border-color: var(--packs-border);
+    background: color-mix(in srgb, var(--pack-color) 8%, var(--packs-surface));
+    border-color: color-mix(in srgb, var(--pack-color) 30%, var(--packs-border));
     transform: translateX(2px);
 }
 
 main.page-packs .pack-card.active {
-    background: var(--packs-selected);
-    border-color: var(--packs-border-strong);
-    box-shadow: inset 3px 0 0 var(--packs-text);
+    background: color-mix(in srgb, var(--pack-color) 12%, var(--packs-surface));
+    border-color: color-mix(in srgb, var(--pack-color) 50%, var(--packs-border));
+    box-shadow: inset 3px 0 0 var(--pack-color);
 }
 
 main.page-packs .pack-color {
@@ -276,7 +304,7 @@ main.page-packs .pack-color {
     height: 30px;
     flex: 0 0 4px;
     border-radius: 99px;
-    background: var(--packs-text);
+    background: var(--pack-color) !important;
 }
 
 main.page-packs .pack-content {
@@ -298,6 +326,10 @@ main.page-packs .pack-name {
     text-overflow: ellipsis;
 }
 
+main.page-packs .pack-card.active .pack-name {
+    color: var(--pack-color);
+}
+
 main.page-packs .pack-level-count {
     color: var(--packs-muted);
     font-size: .69rem;
@@ -307,9 +339,9 @@ main.page-packs .pack-level-count {
 
 main.page-packs .pack-arrow {
     flex: 0 0 auto;
-    color: var(--packs-muted);
+    color: var(--pack-color);
     font-size: .95rem;
-    opacity: .7;
+    opacity: .75;
     transition: transform .2s ease, opacity .2s ease;
 }
 
@@ -343,18 +375,16 @@ main.page-packs .pack-detail {
     overflow: hidden;
     border: 1px solid var(--packs-border);
     border-radius: 22px;
-    background: var(--packs-surface);
+    background: var(--packs-bg);
     box-shadow: var(--packs-shadow);
     color: var(--packs-text);
-    transition: border-color .2s ease, background .2s ease;
 }
 
 main.page-packs .pack-detail-header {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    justify-content: space-between;
-    flex-shrink: 0;
-    gap: 1rem;
+    gap: 1.25rem;
     margin: 0 0 1.2rem;
 }
 
@@ -362,70 +392,78 @@ main.page-packs .pack-detail-title {
     display: flex;
     align-items: center;
     min-width: 0;
-    gap: 1rem;
+    gap: .9rem;
 }
 
 main.page-packs .pack-detail-dot {
     width: 5px;
-    height: 42px;
+    height: 44px;
     flex: 0 0 5px;
     border-radius: 99px;
-    background: var(--packs-text);
+    background: var(--packs-text) !important;
+    box-shadow: none !important;
 }
 
 main.page-packs .pack-detail-title h1 {
+    display: block;
     max-width: 100%;
     margin: 0;
+    padding: 0;
     overflow: hidden;
     color: var(--packs-text);
-    font-size: clamp(1.45rem, 2.1vw, 2rem);
-    line-height: 1.15;
+    font-size: clamp(1.35rem, 2vw, 1.9rem);
+    line-height: 1.25;
     font-weight: 800;
-    letter-spacing: -.065em;
+    letter-spacing: -.055em;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
 main.page-packs .pack-detail-title p {
-    margin: .4rem 0 0;
+    margin: .35rem 0 0;
     color: var(--packs-muted);
-    font-size: .8rem;
+    font-size: .78rem;
     line-height: 1.5;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 main.page-packs .pack-detail-completion {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    flex-shrink: 0;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 112px;
     gap: .3rem;
+    padding: .8rem 1rem;
+    border: 1px solid var(--packs-border);
+    border-radius: 14px;
+    background: var(--packs-surface);
 }
 
 main.page-packs .pack-detail-completion strong {
     color: var(--packs-text);
-    font-size: 1.8rem;
-    line-height: 1;
+    font-size: 1.65rem;
+    line-height: 1.1;
     font-weight: 800;
-    letter-spacing: -.065em;
+    letter-spacing: -.055em;
     font-variant-numeric: tabular-nums;
 }
 
 main.page-packs .pack-detail-completion span {
     color: var(--packs-muted);
-    font-size: .7rem;
+    font-size: .68rem;
     line-height: 1.4;
     font-weight: 500;
 }
 
 main.page-packs .pack-progress {
     width: 100%;
-    height: 6px;
+    height: 7px;
     flex-shrink: 0;
     margin: 0 0 1.6rem;
     overflow: hidden;
     border-radius: 99px;
-    background: color-mix(in srgb, var(--packs-text) 10%, transparent);
+    background: var(--packs-hover);
 }
 
 main.page-packs .pack-progress-fill {
@@ -447,7 +485,6 @@ main.page-packs .section-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-shrink: 0;
     gap: 1rem;
     margin: 0 0 .8rem;
 }
@@ -623,7 +660,6 @@ main.page-packs .pack-no-victors {
     text-align: center;
     font-size: .76rem;
     line-height: 1.5;
-    font-weight: 400;
 }
 
 main.page-packs .empty-detail {
@@ -659,49 +695,13 @@ main.page-packs button:focus-visible {
     outline-offset: 3px;
 }
 
-main.page-packs .difficulty-section.bronze,
-main.page-packs .difficulty-section.silver,
-main.page-packs .difficulty-section.iron,
-main.page-packs .difficulty-section.gold,
-main.page-packs .difficulty-section.diamond,
-main.page-packs .difficulty-section.ruby,
-main.page-packs .difficulty-section.platinum {
-    --difficulty-color: var(--packs-text);
-}
-
-main.page-packs .difficulty-header .difficulty-icon {
-    color: var(--packs-text);
-}
-
-main.page-packs .pack-color,
-main.page-packs .pack-detail-dot,
-main.page-packs .pack-progress-fill {
-    background: var(--packs-text) !important;
-    box-shadow: none !important;
-}
-
-main.page-packs .pack-card,
-main.page-packs .pack-level,
-main.page-packs .pack-completed-player,
-main.page-packs .difficulty-section,
-main.page-packs .pack-detail {
-    -webkit-tap-highlight-color: transparent;
-}
-
-main.page-packs .pack-card:active,
-main.page-packs .pack-level:active {
-    transform: scale(.985);
-}
-
-main.page-packs .pack-card:focus-visible,
-main.page-packs .pack-level:focus-visible {
-    outline: 2px solid var(--packs-text);
-    outline-offset: -2px;
-}
-
 main.page-packs ::selection {
     color: var(--packs-bg);
     background: var(--packs-text);
+}
+
+main.page-packs button:active {
+    transform: scale(.985);
 }
 
 @media (max-width: 1050px) {
@@ -782,6 +782,7 @@ main.page-packs ::selection {
     }
 
     main.page-packs .pack-detail-header {
+        grid-template-columns: minmax(0, 1fr) auto;
         gap: .65rem;
     }
 
@@ -790,11 +791,16 @@ main.page-packs ::selection {
     }
 
     main.page-packs .pack-detail-title h1 {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
+    }
+
+    main.page-packs .pack-detail-completion {
+        min-width: 88px;
+        padding: .65rem;
     }
 
     main.page-packs .pack-detail-completion strong {
-        font-size: 1.45rem;
+        font-size: 1.35rem;
     }
 
     main.page-packs .pack-level {
