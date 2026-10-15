@@ -7,54 +7,55 @@
     "verification": "https://www.youtube.com/watch?v=M1sAJp98bkY",
     "percentToQualify": "83",
     "password": "Locked",
-    "records": [{
-    "user": "Elyxyt",
-    "link": "https://youtu.be/dgk6VBB4hUg?si=n_7dp3FDq_1EK49r",
-    "percent": 100,
-    "hz": 360,
-    "mobile": false
-    },{
-    "user": "Operus",
-    "link": "https://youtu.be/TS5mEkPSYUA?is=kD7tp43Vl5ReaPDD",
-    "percent": 100,
-    "hz": 120,
-    "mobile": false
-},{
-    "user": "Chillen",
-    "link": "https://www.youtube.com/shorts/Xx9IiLsYpXc",
-    "percent": 100,
-    "hz": 360,
-    "mobile": false
-},{
-    "user": "Powstick",
-    "link": "https://www.youtube.com/watch?v=NaVZfgcGF8w",
-    "percent": 100,
-    "hz": 144,
-    "mobile": false
-},{
-    "user": "Picosquishy",
-    "link": "https://youtu.be/bp6vq_Or82A",
-    "percent": 100,
-    "hz": 240,
-    "mobile": false
-},{
-    "user": "sgpeanut",
-    "link": "https://www.youtube.com/watch?v=Y0ET_CAxGO4",
-    "percent": 88,
-    "hz": 360,
-    "mobile": false
-},{
-    "user": "GriddyGMD",
-    "link": "https://www.youtube.com/watch?v=b7B2ZvETzqw",
-    "percent": 100,
-    "hz": 200,
-    "mobile": false
-}
-
-
-
-
-
-
+    "records": [
+        {
+            "user": "Operus",
+            "link": "https://youtu.be/TS5mEkPSYUA?is=kD7tp43Vl5ReaPDD",
+            "percent": 100,
+            "hz": 120,
+            "mobile": false
+        },
+        {
+            "user": "Chillen",
+            "link": "https://www.youtube.com/shorts/Xx9IiLsYpXc",
+            "percent": 100,
+            "hz": 360,
+            "mobile": false
+        },
+        {
+            "user": "Powstick",
+            "link": "https://www.youtube.com/watch?v=NaVZfgcGF8w",
+            "percent": 100,
+            "hz": 144,
+            "mobile": false
+        },
+        {
+            "user": "Picosquishy",
+            "link": "https://youtu.be/bp6vq_Or82A",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false
+        },
+        {
+            "user": "sgpeanut",
+            "link": "https://www.youtube.com/watch?v=Y0ET_CAxGO4",
+            "percent": 88,
+            "hz": 360,
+            "mobile": false
+        },
+        {
+            "user": "GriddyGMD",
+            "link": "https://www.youtube.com/watch?v=b7B2ZvETzqw",
+            "percent": 100,
+            "hz": 200,
+            "mobile": false
+        },
+            {
+            "user": "sgpeanut",
+            "link": "https://www.youtube.com/watch?v=QE-0pqMbyD4",
+            "percent": 100,
+            "hz": 360,
+            "mobile": false
+        }
     ]
 }
