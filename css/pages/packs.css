@@ -685,6 +685,35 @@ main.page-packs .difficulty-header .difficulty-icon {
     color: var(--packs-text);
 }
 
+/* Difficulty symbol colors */
+main.page-packs .difficulty-section.bronze .difficulty-icon {
+    color: #CD7F32 !important;
+}
+
+main.page-packs .difficulty-section.silver .difficulty-icon {
+    color: #C0C0C0 !important;
+}
+
+main.page-packs .difficulty-section.iron .difficulty-icon {
+    color: #777D86 !important;
+}
+
+main.page-packs .difficulty-section.gold .difficulty-icon {
+    color: #FFD700 !important;
+}
+
+main.page-packs .difficulty-section.diamond .difficulty-icon {
+    color: #75DFFF !important;
+}
+
+main.page-packs .difficulty-section.ruby .difficulty-icon {
+    color: #E53950 !important;
+}
+
+main.page-packs .difficulty-section.platinum .difficulty-icon {
+    color: #E6F7FF !important;
+}
+
 main.page-packs .pack-color,
 main.page-packs .pack-detail-dot,
 main.page-packs .pack-progress-fill {
