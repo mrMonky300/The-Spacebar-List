@@ -8,5 +8,12 @@
     "percentToQualify": "58",
     "password": "Locked",
     "records": [
+        {
+            "user": "Darnex",
+            "link": "https://youtu.be/qEKk0vYlIdI",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false
+        }
     ]
 }
