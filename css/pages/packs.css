@@ -1,0 +1,958 @@
+/* =========================================================
+   PACKS PAGE
+   Full-width layout
+   35% Difficulties / 65% Pack Details
+   ========================================================= */
+
+
+/* =========================================================
+   PAGE / GLOBAL MAIN FIX
+   ========================================================= */
+
+main.page-packs {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    height: calc(100vh - 4rem) !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 1rem !important;
+
+    box-sizing: border-box !important;
+
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    color: var(--color-on-background);
+}
+
+
+/* =========================================================
+   MAIN PACKS LAYOUT
+   35% LEFT / 65% RIGHT
+   ========================================================= */
+
+main.page-packs .packs-layout {
+    display: grid !important;
+
+    grid-template-columns:
+        minmax(0, 35%)
+        minmax(0, 65%) !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    height: calc(100vh - 6rem);
+    min-height: 0;
+
+    gap: 1rem;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+main.page-packs .packs-sidebar {
+    display: flex;
+    flex-direction: column;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LEFT HEADER
+   ========================================================= */
+
+.packs-sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    margin-bottom: 0.8rem;
+}
+
+.packs-sidebar-header h1 {
+    margin: 0;
+
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.packs-sidebar-header p {
+    margin: 0.15rem 0 0;
+
+    font-size: 0.8rem;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   DIFFICULTY GRID
+   ========================================================= */
+
+main.page-packs .difficulty-grid {
+    display: grid !important;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: minmax(0, 1fr);
+
+    flex: 1;
+
+    min-width: 0;
+    min-height: 0;
+
+    gap: 0.8rem;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DIFFICULTY SECTIONS
+   ========================================================= */
+
+.difficulty-section {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+
+    height: auto;
+
+    overflow: hidden;
+
+    border-radius: 0.7rem;
+
+    background:
+        var(
+            --color-surface,
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   DIFFICULTY HEADER
+   ========================================================= */
+
+.difficulty-header {
+    display: flex;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    gap: 0.65rem;
+
+    padding: 0.8rem 0.9rem;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+}
+
+.difficulty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+
+    flex-shrink: 0;
+
+    border-radius: 0.5rem;
+
+    font-size: 0.8rem;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+.difficulty-header h2 {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.difficulty-header span {
+    display: block;
+
+    margin-top: 0.1rem;
+
+    font-size: 0.68rem;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   DIFFICULTY PACK LIST
+   ========================================================= */
+
+.difficulty-list {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    min-height: 0;
+
+    flex: 1;
+
+    gap: 0.35rem;
+
+    padding: 0.55rem;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255, 255, 255, 0.15)
+        transparent;
+}
+
+.difficulty-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.difficulty-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.difficulty-list::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   PACK CARD
+   ========================================================= */
+
+.pack-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 3.15rem;
+
+    flex-shrink: 0;
+
+    padding: 0.55rem 0.65rem;
+
+    gap: 0.65rem;
+
+    border: 0;
+    border-radius: 0.45rem;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.pack-card:hover {
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    transform:
+        translateX(2px);
+}
+
+.pack-card.active {
+    background:
+        color-mix(
+            in srgb,
+            var(--pack-color) 14%,
+            rgba(255, 255, 255, 0.04)
+        );
+}
+
+
+/* =========================================================
+   PACK COLOR
+   ========================================================= */
+
+.pack-color {
+    width: 0.25rem;
+    height: 2rem;
+
+    flex-shrink: 0;
+
+    border-radius: 999px;
+
+    background:
+        var(--pack-color);
+}
+
+
+/* =========================================================
+   PACK CONTENT
+   ========================================================= */
+
+.pack-content {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    flex: 1;
+}
+
+.pack-name {
+    min-width: 0;
+
+    overflow: hidden;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pack-level-count {
+    margin-top: 0.12rem;
+
+    font-size: 0.65rem;
+
+    opacity: 0.5;
+}
+
+.pack-arrow {
+    flex-shrink: 0;
+
+    font-size: 0.9rem;
+
+    opacity: 0.35;
+
+    transition:
+        transform 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.pack-card:hover .pack-arrow {
+    opacity: 0.8;
+
+    transform:
+        translateX(2px);
+}
+
+
+/* =========================================================
+   EMPTY DIFFICULTY
+   ========================================================= */
+
+.difficulty-empty {
+    padding: 1rem;
+
+    text-align: center;
+
+    font-size: 0.75rem;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+   65%
+   ========================================================= */
+
+main.page-packs .pack-detail {
+    display: flex;
+    flex-direction: column;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    height: 100%;
+    min-height: 0;
+
+    padding: 1.4rem;
+
+    box-sizing: border-box;
+
+    border-radius: 0.8rem;
+
+    background:
+        var(
+            --color-surface,
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DETAIL HEADER
+   ========================================================= */
+
+.pack-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+}
+
+.pack-detail-title {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    gap: 0.8rem;
+}
+
+.pack-detail-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        var(--pack-color);
+
+    box-shadow:
+        0 0 12px
+        color-mix(
+            in srgb,
+            var(--pack-color) 50%,
+            transparent
+        );
+}
+
+.pack-detail-title h1 {
+    margin: 0;
+
+    overflow: hidden;
+
+    font-size: 1.7rem;
+    font-weight: 850;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pack-detail-title p {
+    margin: 0.2rem 0 0;
+
+    font-size: 0.8rem;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   COMPLETION
+   ========================================================= */
+
+.pack-detail-completion {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    flex-shrink: 0;
+}
+
+.pack-detail-completion strong {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.pack-detail-completion span {
+    margin-top: 0.2rem;
+
+    font-size: 0.7rem;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.pack-progress {
+    width: 100%;
+    height: 0.45rem;
+
+    flex-shrink: 0;
+
+    margin-bottom: 1.4rem;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+.pack-progress-fill {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        var(--pack-color);
+
+    transition:
+        width 0.3s ease;
+}
+
+
+/* =========================================================
+   LEVEL SECTION
+   ========================================================= */
+
+.pack-level-section {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    flex: 1;
+
+    margin-top: 1.2rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-shrink: 0;
+
+    margin-bottom: 0.65rem;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.section-title span {
+    min-width: 1.7rem;
+
+    padding: 0.2rem 0.45rem;
+
+    border-radius: 999px;
+
+    text-align: center;
+
+    font-size: 0.65rem;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   LEVEL LIST
+   ========================================================= */
+
+.pack-levels {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    gap: 0.4rem;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255, 255, 255, 0.15)
+        transparent;
+}
+
+.pack-levels::-webkit-scrollbar {
+    width: 5px;
+}
+
+.pack-levels::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.pack-levels::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   LEVEL ITEM
+   ========================================================= */
+
+.pack-level {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-width: 0;
+
+    flex-shrink: 0;
+
+    padding: 0.75rem 0.8rem;
+
+    gap: 0.8rem;
+
+    border: 0;
+    border-radius: 0.5rem;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    color: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease;
+}
+
+.pack-level:hover {
+    background:
+        rgba(255, 255, 255, 0.075);
+
+    transform:
+        translateX(2px);
+}
+
+.pack-level-rank {
+    width: 2rem;
+
+    flex-shrink: 0;
+
+    font-size: 0.7rem;
+
+    opacity: 0.4;
+}
+
+.pack-level-name {
+    min-width: 0;
+
+    flex: 1;
+
+    overflow: hidden;
+
+    font-size: 0.85rem;
+    font-weight: 650;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pack-level-arrow {
+    flex-shrink: 0;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   VICTORS
+   ========================================================= */
+
+.pack-victors-section {
+    flex-shrink: 0;
+
+    margin-top: 1.2rem;
+}
+
+.pack-completed-players {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(10rem, 1fr)
+        );
+
+    gap: 0.45rem;
+
+    max-height: 12rem;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+
+    scrollbar-color:
+        rgba(255, 255, 255, 0.15)
+        transparent;
+}
+
+.pack-completed-players::-webkit-scrollbar {
+    width: 5px;
+}
+
+.pack-completed-players::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+}
+
+.pack-completed-player {
+    display: flex;
+    align-items: center;
+
+    min-width: 0;
+
+    gap: 0.55rem;
+
+    padding: 0.5rem 0.6rem;
+
+    border-radius: 0.45rem;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+.victor-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.8rem;
+    height: 1.8rem;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    background:
+        var(--pack-color);
+}
+
+.victor-name {
+    min-width: 0;
+
+    overflow: hidden;
+
+    font-size: 0.75rem;
+    font-weight: 650;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.pack-no-victors {
+    padding: 1rem;
+
+    border-radius: 0.5rem;
+
+    text-align: center;
+
+    font-size: 0.75rem;
+
+    opacity: 0.4;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   EMPTY DETAIL
+   ========================================================= */
+
+.empty-detail {
+    display: flex !important;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.empty-detail h2 {
+    margin: 0;
+
+    font-size: 1.4rem;
+}
+
+.empty-detail p {
+    margin-top: 0.4rem;
+
+    font-size: 0.8rem;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   DIFFICULTY COLORS
+   ========================================================= */
+
+.difficulty-section.bronze {
+    --difficulty-color: #cd7f32;
+}
+
+.difficulty-section.silver {
+    --difficulty-color: #c0c0c0;
+}
+
+.difficulty-section.iron {
+    --difficulty-color: #777777;
+}
+
+.difficulty-section.gold {
+    --difficulty-color: #ffd700;
+}
+
+.difficulty-section.diamond {
+    --difficulty-color: #4ddcff;
+}
+
+.difficulty-section.ruby {
+    --difficulty-color: #e0115f;
+}
+
+.difficulty-section.platinum {
+    --difficulty-color: #b9a7ff;
+}
+
+.difficulty-header .difficulty-icon {
+    color:
+        var(--difficulty-color);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    main.page-packs .packs-layout {
+        grid-template-columns:
+            minmax(0, 40%)
+            minmax(0, 60%) !important;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    main.page-packs {
+        height: auto !important;
+
+        overflow-y: visible !important;
+    }
+
+    main.page-packs .packs-layout {
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        height: auto;
+
+        min-height: 0;
+    }
+
+    main.page-packs .packs-sidebar {
+        min-height: 35rem;
+    }
+
+    main.page-packs .pack-detail {
+        min-height: 40rem;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    main.page-packs {
+        padding: 0.7rem !important;
+    }
+
+    main.page-packs .difficulty-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .difficulty-section {
+        min-height: 20rem;
+    }
+
+    .pack-detail-title h1 {
+        font-size: 1.3rem;
+    }
+
+    .pack-detail {
+        padding: 1rem !important;
+    }
+}
