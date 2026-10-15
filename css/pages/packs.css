@@ -681,10 +681,6 @@ main.page-packs .difficulty-section.platinum {
     --difficulty-color: #E6F7FF;
 }
 
-main.page-packs .difficulty-header .difficulty-icon {
-    color: var(--packs-text);
-}
-
 /* Difficulty symbol colors */
 main.page-packs .difficulty-section.bronze .difficulty-icon {
     color: #CD7F32 !important;
