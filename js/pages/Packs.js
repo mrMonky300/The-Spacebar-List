@@ -15,10 +15,6 @@ export default {
 
     template: `
 
-        <!-- =====================================================
-             LOADING
-             ===================================================== -->
-
         <main
             v-if="loading"
             class="page-packs"
@@ -27,20 +23,12 @@ export default {
         </main>
 
 
-        <!-- =====================================================
-             PACKS
-             ===================================================== -->
-
         <main
             v-else
             class="page-packs"
         >
 
             <div class="packs-layout">
-
-                <!-- =================================================
-                     LEFT SIDE - DIFFICULTY PACKS
-                     ================================================= -->
 
                 <section class="packs-sidebar">
 
@@ -57,14 +45,7 @@ export default {
 
                     </div>
 
-
-                    <!-- =================================================
-                         DIFFICULTY GRID
-                         ================================================= -->
-
                     <div class="difficulty-grid">
-
-                        <!-- ================= BRONZE ================= -->
 
                         <section class="difficulty-section bronze">
 
@@ -136,7 +117,6 @@ export default {
                         </section>
 
 
-                        <!-- ================= SILVER ================= -->
 
                         <section class="difficulty-section silver">
 
@@ -208,7 +188,6 @@ export default {
                         </section>
 
 
-                        <!-- ================= IRON ================= -->
 
                         <section class="difficulty-section iron">
 
@@ -280,8 +259,6 @@ export default {
                         </section>
 
 
-                        <!-- ================= GOLD ================= -->
-
                         <section class="difficulty-section gold">
 
                             <div class="difficulty-header">
@@ -352,8 +329,6 @@ export default {
                         </section>
 
 
-                        <!-- ================= DIAMOND ================= -->
-
                         <section class="difficulty-section diamond">
 
                             <div class="difficulty-header">
@@ -423,9 +398,6 @@ export default {
 
                         </section>
 
-
-                        <!-- ================= RUBY ================= -->
-
                         <section class="difficulty-section ruby">
 
                             <div class="difficulty-header">
@@ -494,9 +466,6 @@ export default {
                             </div>
 
                         </section>
-
-
-                        <!-- ================= PLATINUM ================= -->
 
                         <section class="difficulty-section platinum">
 
@@ -571,11 +540,6 @@ export default {
 
                 </section>
 
-
-                <!-- =================================================
-                     RIGHT SIDE - PACK DETAILS
-                     ================================================= -->
-
                 <section
                     v-if="selectedPack"
                     class="pack-detail"
@@ -584,8 +548,6 @@ export default {
                             selectedPack.color || '#ffffff'
                     }"
                 >
-
-                    <!-- HEADER -->
 
                     <header class="pack-detail-header">
 
@@ -623,9 +585,6 @@ export default {
 
                     </header>
 
-
-                    <!-- PROGRESS -->
-
                     <div class="pack-progress">
 
                         <div
@@ -637,9 +596,6 @@ export default {
                         ></div>
 
                     </div>
-
-
-                    <!-- LEVELS -->
 
                     <section class="pack-level-section">
 
@@ -685,9 +641,6 @@ export default {
                         </div>
 
                     </section>
-
-
-                    <!-- VICTORS -->
 
                     <section class="pack-victors-section">
 
@@ -747,8 +700,6 @@ export default {
                 </section>
 
 
-                <!-- EMPTY -->
-
                 <section
                     v-else
                     class="pack-detail empty-detail"
@@ -770,10 +721,6 @@ export default {
     `,
 
 
-    // =============================================================
-    // DATA
-    // =============================================================
-
     data: () => ({
 
         packs: [],
@@ -787,10 +734,6 @@ export default {
     }),
 
 
-    // =============================================================
-    // LOAD
-    // =============================================================
-
     async mounted() {
 
         this.packs =
@@ -800,11 +743,6 @@ export default {
         this.list =
             await fetchList() || [];
 
-
-        /*
-         * Select the first pack automatically.
-         * Prefer Bronze if available.
-         */
 
         const bronze =
             this.getPacks('Bronze');
@@ -829,15 +767,8 @@ export default {
     },
 
 
-    // =============================================================
-    // METHODS
-    // =============================================================
-
     methods: {
 
-        // =========================================================
-        // GET PACKS BY DIFFICULTY
-        // =========================================================
 
         getPacks(difficulty) {
 
@@ -855,9 +786,7 @@ export default {
         },
 
 
-        // =========================================================
-        // SELECT PACK
-        // =========================================================
+
 
         selectPack(pack) {
 
@@ -867,9 +796,6 @@ export default {
         },
 
 
-        // =========================================================
-        // PACK PROGRESS
-        // =========================================================
 
         getPackProgress(pack) {
 
@@ -896,9 +822,7 @@ export default {
         },
 
 
-        // =========================================================
-        // FIND LEVEL
-        // =========================================================
+
 
         getLevel(identifier) {
 
@@ -921,8 +845,6 @@ export default {
                 }
 
 
-                // NAME
-
                 if (
                     String(level.name)
                         .trim()
@@ -934,8 +856,6 @@ export default {
 
                 }
 
-
-                // PATH
 
                 if (
                     String(level.path)
@@ -949,7 +869,7 @@ export default {
                 }
 
 
-                // ID
+
 
                 if (
                     String(level.id)
@@ -976,9 +896,6 @@ export default {
         },
 
 
-        // =========================================================
-        // LEVEL NAME
-        // =========================================================
 
         getLevelName(identifier) {
 
@@ -993,10 +910,6 @@ export default {
 
         },
 
-
-        // =========================================================
-        // OPEN LEVEL
-        // =========================================================
 
         openLevel(identifier) {
 
@@ -1030,10 +943,6 @@ export default {
 
         },
 
-
-        // =========================================================
-        // GET COMPLETED PLAYERS
-        // =========================================================
 
         getCompletedPlayers(pack) {
 
@@ -1103,8 +1012,6 @@ export default {
 
                     }
 
-
-                    // 100% RECORDS
 
                     for (
                         const record
