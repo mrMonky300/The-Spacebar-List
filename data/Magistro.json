@@ -8,5 +8,12 @@
     "percentToQualify": "100",
     "password": "Locked",
     "records": [
+        {
+            "user": "Operus",
+            "link": "https://www.youtube.com/watch?v=vArH-KnZL5M",
+            "percent": 100,
+            "hz": 120,
+            "mobile": false
+        }
     ]
 }
