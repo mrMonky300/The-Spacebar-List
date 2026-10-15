@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "name": "test",
+        "color": "#DC143C",
+        "levels": [
+            "Allegiance",
+            "Cataclysm",
+            "Poltergeist"
+        ],
+        "difficulty": "Silver"
+    }
+]
