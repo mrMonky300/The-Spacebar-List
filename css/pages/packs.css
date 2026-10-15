@@ -1,43 +1,21 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 main.page-packs {
-    --packs-bg: #ffffff;
-    --packs-text: #171717;
-    --packs-surface: #fafafa;
-    --packs-surface-raised: #ffffff;
-    --packs-muted: #686868;
-    --packs-subtle: #909090;
-    --packs-border: #e8e8e8;
-    --packs-border-strong: #d0d0d0;
-    --packs-hover: #f2f2f2;
-    --packs-selected: #ebebeb;
-    --packs-shadow: 0 8px 28px rgba(0, 0, 0, .045);
-    --packs-shadow-hover: 0 12px 32px rgba(0, 0, 0, .075);
-    --packs-radius: 18px;
-    --packs-radius-sm: 12px;
-    --packs-radius-xs: 9px;
-    --packs-font: 'Inter', Arial, sans-serif;
-
-    display: block !important;
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    min-height: calc(100vh - 4rem);
-    height: auto !important;
-    margin: 0 !important;
-    padding: clamp(1rem, 2.2vw, 2rem) !important;
-    overflow: visible !important;
-    box-sizing: border-box;
+    --packs-bg: #f5f6f8;
+    --packs-panel: #ffffff;
+    --packs-card: #f8f9fb;
+    --packs-hover: #f0f2f5;
+    --packs-text: #17191d;
+    --packs-muted: #777e89;
+    --packs-border: #e6e8ed;
+    --packs-track: #e9ebef;
+    --packs-shadow: 0 8px 30px rgba(20, 25, 35, .045);
+    --packs-radius: 22px;
+    width: 100%;
+    min-width: 0;
     color: var(--packs-text);
-    background: var(--packs-bg);
-    font-family: var(--packs-font) !important;
-    font-size: 14px;
-    line-height: 1.55;
-    letter-spacing: -.015em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
 }
 
 body.dark main.page-packs,
@@ -46,23 +24,18 @@ body.theme-dark main.page-packs,
 body[data-theme="dark"] main.page-packs,
 html.dark main.page-packs,
 html.dark-mode main.page-packs,
-html.theme-dark main.page-packs,
 html[data-theme="dark"] main.page-packs,
 .dark main.page-packs,
-.dark-mode main.page-packs,
-[data-theme="dark"] main.page-packs {
-    --packs-bg: #0b0b0b;
-    --packs-text: #f5f5f5;
-    --packs-surface: #121212;
-    --packs-surface-raised: #171717;
-    --packs-muted: #a0a0a0;
-    --packs-subtle: #777777;
-    --packs-border: #252525;
-    --packs-border-strong: #393939;
-    --packs-hover: #1c1c1c;
-    --packs-selected: #242424;
-    --packs-shadow: 0 8px 28px rgba(0, 0, 0, .2);
-    --packs-shadow-hover: 0 12px 32px rgba(0, 0, 0, .3);
+.dark-mode main.page-packs {
+    --packs-bg: #0b0c0f;
+    --packs-panel: #121419;
+    --packs-card: #181a20;
+    --packs-hover: #20232a;
+    --packs-text: #f1f2f5;
+    --packs-muted: #9298a5;
+    --packs-border: #292c34;
+    --packs-track: #292c34;
+    --packs-shadow: 0 10px 35px rgba(0, 0, 0, .16);
 }
 
 main.page-packs *,
@@ -71,745 +44,544 @@ main.page-packs *::after {
     box-sizing: border-box;
 }
 
-main.page-packs :is(
-    h1, h2, h3, h4, p, span, div, a, label,
-    button, input, textarea, select, small, strong,
-    em, li, section, article
-) {
-    font-family: var(--packs-font) !important;
-}
-
-main.page-packs button {
-    font-size: inherit;
-    letter-spacing: inherit;
-}
-
-main.page-packs h1,
-main.page-packs h2,
-main.page-packs h3,
-main.page-packs p {
-    overflow-wrap: anywhere;
+main.page-packs button,
+main.page-packs input,
+main.page-packs select {
+    font: inherit;
 }
 
 main.page-packs .packs-layout {
-    display: grid !important;
-    grid-template-columns: minmax(300px, .9fr) minmax(0, 1.6fr) !important;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.6fr);
     align-items: start;
-    gap: clamp(1rem, 2vw, 1.75rem);
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    height: auto !important;
-    min-height: calc(100vh - 7rem);
-    margin: 0;
+    gap: 24px;
+    width: 100%;
+}
+
+main.page-packs .packs-sidebar,
+main.page-packs .pack-detail {
+    min-width: 0;
+    background: var(--packs-panel);
+    border: 1px solid var(--packs-border);
+    border-radius: var(--packs-radius);
+    box-shadow: var(--packs-shadow);
+    overflow: hidden;
 }
 
 main.page-packs .packs-sidebar {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    min-height: 0;
-    gap: 1.15rem;
+    padding: 20px;
 }
 
 main.page-packs .packs-sidebar-header {
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: space-between;
-    margin: 0;
-    padding: 0 0 1rem;
-    border-bottom: 1px solid var(--packs-border);
+    gap: 12px;
+    margin: 0 0 20px;
 }
 
-main.page-packs .packs-sidebar-header h1 {
+main.page-packs .packs-sidebar-header h1,
+main.page-packs .packs-sidebar-header h2,
+main.page-packs .packs-sidebar-header h3 {
     margin: 0;
     color: var(--packs-text);
-    font-size: clamp(1.5rem, 2vw, 1.9rem);
-    line-height: 1.2;
+    font-size: 19px;
     font-weight: 800;
-    letter-spacing: -.06em;
-}
-
-main.page-packs .packs-sidebar-header p {
-    margin: .45rem 0 0;
-    color: var(--packs-muted);
-    font-size: .8rem;
-    line-height: 1.5;
-    font-weight: 400;
+    letter-spacing: -.55px;
 }
 
 main.page-packs .difficulty-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-auto-rows: minmax(0, auto);
-    align-content: start;
-    gap: .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
     min-width: 0;
-    min-height: 0;
-    flex: none;
-    overflow: visible;
 }
 
 main.page-packs .difficulty-section {
-    --difficulty-color: #777777;
+    --difficulty-color: #8b929e;
+    --difficulty-rgb: 139, 146, 158;
     display: flex;
     flex-direction: column;
+    gap: 9px;
     min-width: 0;
-    min-height: 145px;
-    height: auto;
-    overflow: hidden;
-    border: 1px solid color-mix(in srgb, var(--difficulty-color) 30%, var(--packs-border));
-    border-radius: var(--packs-radius);
-    background: var(--packs-surface);
-    transition: border-color .22s ease, background .22s ease, transform .22s ease;
 }
 
-main.page-packs .difficulty-section.bronze {
+main.page-packs .difficulty-section.bronze,
+main.page-packs .difficulty-section[data-difficulty="bronze"] {
     --difficulty-color: #c47a35;
+    --difficulty-rgb: 196, 122, 53;
 }
 
-main.page-packs .difficulty-section.silver {
+main.page-packs .difficulty-section.silver,
+main.page-packs .difficulty-section[data-difficulty="silver"] {
     --difficulty-color: #aeb8c4;
+    --difficulty-rgb: 174, 184, 196;
 }
 
-main.page-packs .difficulty-section.iron {
-    --difficulty-color: #7e8792;
+main.page-packs .difficulty-section.iron,
+main.page-packs .difficulty-section[data-difficulty="iron"] {
+    --difficulty-color: #818b99;
+    --difficulty-rgb: 129, 139, 153;
 }
 
-main.page-packs .difficulty-section.gold {
+main.page-packs .difficulty-section.gold,
+main.page-packs .difficulty-section[data-difficulty="gold"] {
     --difficulty-color: #d9a928;
+    --difficulty-rgb: 217, 169, 40;
 }
 
-main.page-packs .difficulty-section.diamond {
+main.page-packs .difficulty-section.diamond,
+main.page-packs .difficulty-section[data-difficulty="diamond"] {
     --difficulty-color: #40bddd;
+    --difficulty-rgb: 64, 189, 221;
 }
 
-main.page-packs .difficulty-section.ruby {
+main.page-packs .difficulty-section.ruby,
+main.page-packs .difficulty-section[data-difficulty="ruby"] {
     --difficulty-color: #df526b;
+    --difficulty-rgb: 223, 82, 107;
 }
 
-main.page-packs .difficulty-section.platinum {
+main.page-packs .difficulty-section.platinum,
+main.page-packs .difficulty-section[data-difficulty="platinum"] {
     --difficulty-color: #aa94df;
-}
-
-main.page-packs .difficulty-section:hover {
-    border-color: color-mix(in srgb, var(--difficulty-color) 65%, var(--packs-border));
-    transform: translateY(-2px);
+    --difficulty-rgb: 170, 148, 223;
 }
 
 main.page-packs .difficulty-header {
     display: flex;
     align-items: center;
-    gap: .7rem;
-    flex-shrink: 0;
-    padding: .9rem;
-    border-bottom: 1px solid color-mix(in srgb, var(--difficulty-color) 20%, var(--packs-border));
-    background: color-mix(in srgb, var(--difficulty-color) 7%, var(--packs-surface));
+    gap: 9px;
+    padding: 0 3px;
+    color: var(--packs-muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 main.page-packs .difficulty-icon {
-    display: grid;
-    place-items: center;
-    width: 2.1rem;
-    height: 2.1rem;
-    flex: 0 0 2.1rem;
-    border: 1px solid color-mix(in srgb, var(--difficulty-color) 35%, var(--packs-border));
-    border-radius: 10px;
-    background: color-mix(in srgb, var(--difficulty-color) 13%, var(--packs-surface));
-    color: var(--difficulty-color) !important;
-    font-size: .75rem;
-    font-weight: 700;
-}
-
-main.page-packs .difficulty-header h2 {
-    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 27px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    background: rgba(var(--difficulty-rgb), .14);
     color: var(--difficulty-color);
-    font-size: .85rem;
-    line-height: 1.35;
-    font-weight: 700;
-    letter-spacing: -.025em;
-}
-
-main.page-packs .difficulty-header span {
-    display: block;
-    margin-top: .2rem;
-    color: var(--packs-muted);
-    font-size: .7rem;
-    line-height: 1.4;
-    font-weight: 400;
 }
 
 main.page-packs .difficulty-list {
     display: flex;
-    flex: 1 1 auto;
     flex-direction: column;
-    align-items: stretch;
-    gap: .35rem;
+    gap: 7px;
     min-width: 0;
-    min-height: 0;
-    padding: .6rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--packs-border-strong) transparent;
-}
-
-main.page-packs .difficulty-list::-webkit-scrollbar,
-main.page-packs .pack-levels::-webkit-scrollbar,
-main.page-packs .pack-completed-players::-webkit-scrollbar {
-    width: 5px;
-}
-
-main.page-packs .difficulty-list::-webkit-scrollbar-thumb,
-main.page-packs .pack-levels::-webkit-scrollbar-thumb,
-main.page-packs .pack-completed-players::-webkit-scrollbar-thumb {
-    border-radius: 99px;
-    background: var(--packs-border-strong);
 }
 
 main.page-packs .pack-card {
     --pack-color: var(--difficulty-color);
-    position: relative;
     display: flex;
     align-items: center;
+    gap: 12px;
     width: 100%;
     min-width: 0;
-    min-height: 50px;
-    flex: 0 0 auto;
-    gap: .7rem;
-    padding: .65rem .7rem;
+    padding: 12px 13px;
     border: 1px solid transparent;
-    border-radius: var(--packs-radius-sm);
-    background: transparent;
+    border-radius: 15px;
+    background: var(--packs-card);
     color: var(--packs-text);
     text-align: left;
     cursor: pointer;
-    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    transition: background .18s ease, border-color .18s ease, transform .18s ease;
 }
 
 main.page-packs .pack-card:hover {
-    background: color-mix(in srgb, var(--pack-color) 8%, var(--packs-surface));
-    border-color: color-mix(in srgb, var(--pack-color) 30%, var(--packs-border));
-    transform: translateX(2px);
+    background: var(--packs-hover);
+    border-color: rgba(var(--difficulty-rgb), .3);
+    transform: translateY(-1px);
 }
 
-main.page-packs .pack-card.active {
-    background: color-mix(in srgb, var(--pack-color) 12%, var(--packs-surface));
-    border-color: color-mix(in srgb, var(--pack-color) 50%, var(--packs-border));
-    box-shadow: inset 3px 0 0 var(--pack-color);
+main.page-packs .pack-card.active,
+main.page-packs .pack-card.selected {
+    background: rgba(var(--difficulty-rgb), .11);
+    border-color: rgba(var(--difficulty-rgb), .48);
 }
 
 main.page-packs .pack-color {
-    width: 4px;
-    height: 30px;
-    flex: 0 0 4px;
-    border-radius: 99px;
-    background: var(--pack-color) !important;
+    display: block;
+    width: 11px;
+    height: 38px;
+    flex: 0 0 11px;
+    border-radius: 8px;
+    background: var(--pack-color);
 }
 
 main.page-packs .pack-content {
     display: flex;
     flex: 1;
+    align-items: flex-start;
     flex-direction: column;
+    gap: 4px;
     min-width: 0;
-    gap: .2rem;
 }
 
 main.page-packs .pack-name {
+    display: block;
+    max-width: 100%;
     overflow: hidden;
-    color: var(--packs-text);
-    font-size: .83rem;
-    line-height: 1.4;
-    font-weight: 650;
-    letter-spacing: -.025em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-main.page-packs .pack-card.active .pack-name {
     color: var(--pack-color);
+    font-size: 13px;
+    font-weight: 750;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 main.page-packs .pack-level-count {
     color: var(--packs-muted);
-    font-size: .69rem;
-    line-height: 1.35;
-    font-weight: 400;
+    font-size: 11px;
+    font-weight: 500;
 }
 
 main.page-packs .pack-arrow {
-    flex: 0 0 auto;
+    flex-shrink: 0;
     color: var(--pack-color);
-    font-size: .95rem;
-    opacity: .75;
-    transition: transform .2s ease, opacity .2s ease;
+    font-size: 18px;
+    opacity: .8;
+    transition: transform .18s ease;
 }
 
 main.page-packs .pack-card:hover .pack-arrow {
-    opacity: 1;
     transform: translateX(3px);
 }
 
 main.page-packs .difficulty-empty {
-    display: grid;
-    flex: 1;
-    place-items: center;
-    min-height: 50px;
-    padding: .8rem;
-    color: var(--packs-subtle);
-    font-size: .75rem;
-    font-weight: 400;
+    padding: 14px;
+    border: 1px dashed var(--packs-border);
+    border-radius: 13px;
+    color: var(--packs-muted);
+    font-size: 12px;
+    text-align: center;
 }
 
 main.page-packs .pack-detail {
-    position: sticky;
-    top: 1rem;
-    display: flex;
-    flex-direction: column;
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-    min-height: calc(100vh - 7rem);
-    height: auto !important;
-    padding: clamp(1.25rem, 2.2vw, 2rem);
-    overflow: hidden;
-    border: 1px solid var(--packs-border);
-    border-radius: 22px;
-    background: var(--packs-bg);
-    box-shadow: var(--packs-shadow);
-    color: var(--packs-text);
+    position: relative;
+    min-height: 360px;
+    padding: 25px;
+    border-radius: 24px;
+    isolation: isolate;
+}
+
+main.page-packs .pack-detail::before,
+main.page-packs .pack-detail::after {
+    display: none !important;
+    content: none !important;
 }
 
 main.page-packs .pack-detail-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: 1.25rem;
-    margin: 0 0 1.2rem;
+    gap: 18px;
+    margin: 0 0 22px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+main.page-packs .pack-detail-dot {
+    display: none !important;
 }
 
 main.page-packs .pack-detail-title {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 7px;
     min-width: 0;
-    gap: .9rem;
 }
 
-main.page-packs .pack-detail-dot {
-    width: 5px;
-    height: 44px;
-    flex: 0 0 5px;
-    border-radius: 99px;
-    background: var(--packs-text) !important;
-    box-shadow: none !important;
-}
-
-main.page-packs .pack-detail-title h1 {
-    display: block;
-    max-width: 100%;
+main.page-packs .pack-detail-title h1,
+main.page-packs .pack-detail-title h2,
+main.page-packs .pack-detail-title h3 {
     margin: 0;
-    padding: 0;
-    overflow: hidden;
+    overflow-wrap: anywhere;
     color: var(--packs-text);
-    font-size: clamp(1.35rem, 2vw, 1.9rem);
-    line-height: 1.25;
+    font-size: clamp(22px, 2.3vw, 30px);
     font-weight: 800;
-    letter-spacing: -.055em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    line-height: 1.2;
+    letter-spacing: -1px;
 }
 
 main.page-packs .pack-detail-title p {
-    margin: .35rem 0 0;
+    margin: 0;
     color: var(--packs-muted);
-    font-size: .78rem;
-    line-height: 1.5;
+    font-size: 13px;
     font-weight: 500;
+    line-height: 1.5;
 }
 
 main.page-packs .pack-detail-completion {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    min-width: 112px;
-    gap: .3rem;
-    padding: .8rem 1rem;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 83px;
+    min-height: 76px;
+    padding: 12px;
     border: 1px solid var(--packs-border);
-    border-radius: 14px;
-    background: var(--packs-surface);
+    border-radius: 17px;
+    background: var(--packs-card);
+    text-align: center;
 }
 
-main.page-packs .pack-detail-completion strong {
+main.page-packs .pack-detail-completion strong,
+main.page-packs .pack-detail-completion b {
     color: var(--packs-text);
-    font-size: 1.65rem;
-    line-height: 1.1;
+    font-size: 23px;
     font-weight: 800;
-    letter-spacing: -.055em;
-    font-variant-numeric: tabular-nums;
+    line-height: 1.1;
+    letter-spacing: -.7px;
 }
 
 main.page-packs .pack-detail-completion span {
     color: var(--packs-muted);
-    font-size: .68rem;
-    line-height: 1.4;
-    font-weight: 500;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-transform: uppercase;
 }
 
 main.page-packs .pack-progress {
     width: 100%;
-    height: 7px;
-    flex-shrink: 0;
-    margin: 0 0 1.6rem;
+    height: 6px;
+    margin: 0 0 27px;
     overflow: hidden;
-    border-radius: 99px;
-    background: var(--packs-hover);
+    border: 0;
+    border-radius: 999px;
+    background: var(--packs-track);
 }
 
 main.page-packs .pack-progress-fill {
     height: 100%;
+    min-width: 0;
     border-radius: inherit;
-    background: var(--packs-text);
-    transition: width .5s cubic-bezier(.2, .75, .25, 1);
+    background: var(--packs-muted);
+    transition: width .35s ease;
 }
 
-main.page-packs .pack-level-section {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    min-height: 180px;
-    margin: 0;
+main.page-packs .pack-level-section,
+main.page-packs .pack-victors-section {
+    margin-top: 25px;
 }
 
 main.page-packs .section-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
-    margin: 0 0 .8rem;
-}
-
-main.page-packs .section-title h2 {
-    margin: 0;
+    gap: 12px;
+    margin: 0 0 13px;
     color: var(--packs-text);
-    font-size: .95rem;
-    line-height: 1.4;
+    font-size: 14px;
     font-weight: 750;
-    letter-spacing: -.035em;
-}
-
-main.page-packs .section-title span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 2rem;
-    min-height: 1.65rem;
-    padding: .2rem .55rem;
-    border: 1px solid var(--packs-border);
-    border-radius: 8px;
-    background: var(--packs-hover);
-    color: var(--packs-muted);
-    font-size: .7rem;
-    line-height: 1;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
+    letter-spacing: -.2px;
 }
 
 main.page-packs .pack-levels {
     display: flex;
-    flex: 1 1 auto;
     flex-direction: column;
-    gap: .4rem;
-    min-height: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--packs-border-strong) transparent;
+    gap: 8px;
+    min-width: 0;
 }
 
 main.page-packs .pack-level {
     display: flex;
     align-items: center;
-    width: 100%;
+    gap: 12px;
     min-width: 0;
-    min-height: 46px;
-    flex: 0 0 auto;
-    gap: 1rem;
-    padding: .7rem .85rem;
-    border: 1px solid transparent;
-    border-radius: var(--packs-radius-sm);
-    background: transparent;
+    padding: 13px 15px;
+    border: 1px solid var(--packs-border);
+    border-radius: 15px;
+    background: var(--packs-card);
     color: var(--packs-text);
-    text-align: left;
-    cursor: pointer;
-    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    transition: background .18s ease, border-color .18s ease;
 }
 
 main.page-packs .pack-level:hover {
-    transform: translateX(3px);
-    border-color: var(--packs-border);
+    border-color: #a4aab5;
     background: var(--packs-hover);
 }
 
-main.page-packs .pack-level-rank {
-    width: 2rem;
-    flex: 0 0 2rem;
-    color: var(--packs-muted);
-    font-size: .72rem;
-    line-height: 1.3;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-}
-
-main.page-packs .pack-level-name {
-    flex: 1;
+main.page-packs .pack-level > * {
     min-width: 0;
-    overflow: hidden;
-    color: var(--packs-text);
-    font-size: .85rem;
-    line-height: 1.45;
-    font-weight: 600;
-    letter-spacing: -.02em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-main.page-packs .pack-level-arrow {
-    flex: 0 0 auto;
-    color: var(--packs-muted);
-    opacity: .7;
-    transition: transform .2s ease, opacity .2s ease;
-}
-
-main.page-packs .pack-level:hover .pack-level-arrow {
-    opacity: 1;
-    transform: translateX(3px);
-}
-
-main.page-packs .pack-victors-section {
-    flex: 0 0 auto;
-    margin-top: 1.6rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid var(--packs-border);
 }
 
 main.page-packs .pack-completed-players {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
-    gap: .55rem;
-    max-height: 12rem;
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--packs-border-strong) transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
 }
 
 main.page-packs .pack-completed-player {
     display: flex;
     align-items: center;
+    gap: 11px;
     min-width: 0;
-    gap: .65rem;
-    padding: .6rem .7rem;
+    padding: 10px 12px;
     border: 1px solid var(--packs-border);
-    border-radius: var(--packs-radius-sm);
-    background: var(--packs-hover);
-    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    border-radius: 14px;
+    background: var(--packs-card);
+    transition: background .18s ease;
 }
 
 main.page-packs .pack-completed-player:hover {
-    border-color: var(--packs-border-strong);
-    background: var(--packs-selected);
-    transform: translateY(-1px);
+    background: var(--packs-hover);
 }
 
 main.page-packs .victor-avatar {
-    display: grid;
-    place-items: center;
-    width: 2rem;
-    height: 2rem;
-    flex: 0 0 2rem;
-    border: 1px solid var(--packs-border-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    overflow: hidden;
     border-radius: 50%;
-    background: var(--packs-text);
-    color: var(--packs-bg);
-    font-size: .72rem;
-    line-height: 1;
+    background: var(--packs-hover);
+    color: var(--packs-text);
+    font-size: 12px;
     font-weight: 750;
+}
+
+main.page-packs .victor-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
 }
 
 main.page-packs .victor-name {
     min-width: 0;
     overflow: hidden;
     color: var(--packs-text);
-    font-size: .76rem;
-    line-height: 1.4;
-    font-weight: 600;
-    white-space: nowrap;
+    font-size: 13px;
+    font-weight: 650;
     text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 main.page-packs .pack-no-victors {
-    display: grid;
-    place-items: center;
-    min-height: 64px;
-    padding: 1rem;
-    border: 1px dashed var(--packs-border-strong);
-    border-radius: var(--packs-radius-sm);
-    background: transparent;
+    padding: 20px;
+    border: 1px dashed var(--packs-border);
+    border-radius: 15px;
     color: var(--packs-muted);
+    font-size: 12px;
+    line-height: 1.6;
     text-align: center;
-    font-size: .76rem;
-    line-height: 1.5;
 }
 
 main.page-packs .empty-detail {
-    display: flex !important;
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-height: calc(100vh - 7rem);
-    padding: 2rem;
-    border: 1px solid var(--packs-border);
-    border-radius: 22px;
-    background: var(--packs-surface);
+    flex-direction: column;
+    min-height: 330px;
+    padding: 30px;
+    border: 1px dashed var(--packs-border);
+    border-radius: 20px;
+    background: var(--packs-card);
+    color: var(--packs-muted);
     text-align: center;
 }
 
-main.page-packs .empty-detail h2 {
-    margin: 0;
+main.page-packs .empty-detail h2,
+main.page-packs .empty-detail h3 {
+    margin: 0 0 8px;
     color: var(--packs-text);
-    font-size: 1.5rem;
-    line-height: 1.25;
-    font-weight: 800;
-    letter-spacing: -.055em;
+    font-size: 19px;
+    font-weight: 750;
 }
 
 main.page-packs .empty-detail p {
-    margin: .55rem 0 0;
-    color: var(--packs-muted);
-    font-size: .82rem;
-    line-height: 1.6;
+    max-width: 320px;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
 }
 
+main.page-packs a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main.page-packs a:focus-visible,
 main.page-packs button:focus-visible {
-    outline: 2px solid var(--packs-text);
+    outline: 2px solid var(--packs-muted);
     outline-offset: 3px;
 }
 
-main.page-packs ::selection {
-    color: var(--packs-bg);
-    background: var(--packs-text);
-}
-
-main.page-packs button:active {
-    transform: scale(.985);
-}
-
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
     main.page-packs .packs-layout {
-        grid-template-columns: minmax(260px, .9fr) minmax(0, 1.35fr) !important;
-        gap: 1rem;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    main.page-packs .packs-sidebar {
+        padding: 17px;
     }
 
     main.page-packs .difficulty-grid {
-        gap: .65rem;
-    }
-
-    main.page-packs .difficulty-section {
-        min-height: 135px;
-    }
-
-    main.page-packs .pack-detail {
-        padding: 1.25rem;
-    }
-}
-
-@media (max-width: 800px) {
-    main.page-packs {
-        min-height: 0;
-        padding: 1rem !important;
-    }
-
-    main.page-packs .packs-layout {
-        grid-template-columns: minmax(0, 1fr) !important;
-        min-height: 0;
-    }
-
-    main.page-packs .difficulty-grid {
+        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
     }
 
     main.page-packs .pack-detail {
-        position: static;
-        min-height: 560px;
-    }
-
-    main.page-packs .empty-detail {
-        min-height: 280px;
+        padding: 22px;
     }
 }
 
-@media (max-width: 480px) {
-    main.page-packs {
-        padding: .75rem !important;
-    }
-
-    main.page-packs .packs-sidebar-header h1 {
-        font-size: 1.5rem;
-    }
-
+@media (max-width: 560px) {
     main.page-packs .difficulty-grid {
         grid-template-columns: minmax(0, 1fr);
-        gap: .65rem;
-    }
-
-    main.page-packs .difficulty-section {
-        min-height: 110px;
-        border-radius: 14px;
-    }
-
-    main.page-packs .difficulty-header {
-        padding: .75rem;
-    }
-
-    main.page-packs .difficulty-list {
-        padding: .5rem;
     }
 
     main.page-packs .pack-detail {
-        min-height: 520px;
-        padding: 1rem;
-        border-radius: 17px;
+        min-height: 0;
+        padding: 17px;
+        border-radius: 20px;
     }
 
     main.page-packs .pack-detail-header {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: .65rem;
+        gap: 12px;
+        margin-bottom: 19px;
     }
 
-    main.page-packs .pack-detail-title {
-        gap: .7rem;
-    }
-
-    main.page-packs .pack-detail-title h1 {
-        font-size: 1.3rem;
+    main.page-packs .pack-detail-title h1,
+    main.page-packs .pack-detail-title h2,
+    main.page-packs .pack-detail-title h3 {
+        font-size: 22px;
+        letter-spacing: -.6px;
     }
 
     main.page-packs .pack-detail-completion {
-        min-width: 88px;
-        padding: .65rem;
+        min-width: 68px;
+        min-height: 65px;
+        padding: 9px;
+        border-radius: 14px;
     }
 
-    main.page-packs .pack-detail-completion strong {
-        font-size: 1.35rem;
+    main.page-packs .pack-detail-completion strong,
+    main.page-packs .pack-detail-completion b {
+        font-size: 20px;
     }
 
-    main.page-packs .pack-level {
-        gap: .65rem;
-        padding: .65rem;
-    }
-
-    main.page-packs .pack-completed-players {
-        grid-template-columns: minmax(0, 1fr);
+    main.page-packs .pack-progress {
+        margin-bottom: 22px;
     }
 }
 
@@ -818,8 +590,8 @@ main.page-packs button:active {
     main.page-packs *::before,
     main.page-packs *::after {
         scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
 }
