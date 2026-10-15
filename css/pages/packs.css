@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 main.page-packs {
@@ -39,17 +40,25 @@ main.page-packs {
     text-rendering: optimizeLegibility;
 }
 
+/*
+ * Theme support.
+ * Supports common class and data-attribute theme conventions.
+ */
 body.dark main.page-packs,
 body.dark-mode main.page-packs,
 body.theme-dark main.page-packs,
 body[data-theme="dark"] main.page-packs,
+body[data-bs-theme="dark"] main.page-packs,
 html.dark main.page-packs,
 html.dark-mode main.page-packs,
 html.theme-dark main.page-packs,
 html[data-theme="dark"] main.page-packs,
+html[data-bs-theme="dark"] main.page-packs,
 .dark main.page-packs,
 .dark-mode main.page-packs,
-[data-theme="dark"] main.page-packs {
+.theme-dark main.page-packs,
+[data-theme="dark"] main.page-packs,
+[data-bs-theme="dark"] main.page-packs {
     --packs-bg: #101010;
     --packs-text: #f2f2f2;
     --packs-surface: #151515;
@@ -62,6 +71,26 @@ html[data-theme="dark"] main.page-packs,
     --packs-selected: #262626;
     --packs-shadow: 0 4px 16px rgba(0, 0, 0, .12);
     --packs-shadow-hover: 0 6px 20px rgba(0, 0, 0, .2);
+}
+
+/* Automatic support for system dark mode, unless the site sets a theme class. */
+@media (prefers-color-scheme: dark) {
+    html:not(.light):not(.light-mode):not([data-theme="light"]):not([data-bs-theme="light"])
+    body:not(.light):not(.light-mode):not([data-theme="light"]):not([data-bs-theme="light"])
+    main.page-packs {
+        --packs-bg: #101010;
+        --packs-text: #f2f2f2;
+        --packs-surface: #151515;
+        --packs-surface-raised: #1a1a1a;
+        --packs-muted: #a3a3a3;
+        --packs-subtle: #777777;
+        --packs-border: #292929;
+        --packs-border-strong: #3a3a3a;
+        --packs-hover: #202020;
+        --packs-selected: #262626;
+        --packs-shadow: 0 4px 16px rgba(0, 0, 0, .12);
+        --packs-shadow-hover: 0 6px 20px rgba(0, 0, 0, .2);
+    }
 }
 
 main.page-packs *,
@@ -653,6 +682,8 @@ main.page-packs button:focus-visible {
     outline: 2px solid var(--packs-text);
     outline-offset: 3px;
 }
+
+/* Difficulty colors */
 main.page-packs .difficulty-section.bronze {
     --difficulty-color: #CD7F32;
 }
