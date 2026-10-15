@@ -1,0 +1,11 @@
+{
+    "id": 9999999999,
+    "name": "NAME",
+    "author": "LEVEL PUBLISHER",
+    "creators": ["CREATOR1", "CREATOR2", "CREATOR3"],
+    "verifier": "VERIFIER",
+    "verification": "LINK",
+    "percentToQualify": "QUALIFICATION PERCENT",
+    "password": "PASSWORD STATE (LOCKED/COPYABLE",
+    "records": []
+}
