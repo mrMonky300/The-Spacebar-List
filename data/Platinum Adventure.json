@@ -36,9 +36,16 @@
             "hz": 200,
             "mobile": false
         },
-            {
+        {
             "user": "sgpeanut",
             "link": "https://www.youtube.com/watch?v=QE-0pqMbyD4",
+            "percent": 100,
+            "hz": 360,
+            "mobile": false
+        },
+        {
+            "user": "Darnex",
+            "link": "https://youtu.be/pWdmsSgQ5Vo",
             "percent": 100,
             "hz": 360,
             "mobile": false
