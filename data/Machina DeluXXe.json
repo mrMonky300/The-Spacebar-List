@@ -7,5 +7,13 @@
     "verification": "https://youtu.be/Er1EvpZPt88",
     "percentToQualify": "86",
     "password": "Copyable",
-    "records": []
+    "records": [
+        {
+            "user": "Jorser",
+            "link": "https://www.youtube.com/live/q4fVXLROpOg",
+            "percent": 100,
+            "hz": 60,
+            "mobile": false
+        }
+    ]
 }
