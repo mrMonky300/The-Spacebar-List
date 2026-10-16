@@ -9,4 +9,11 @@
     "password": "Copyable",
     "records": [
     ]
+    {
+            "user": "Jorser",
+            "link": "https://www.youtube.com/live/q4fVXLROpOg",
+            "percent": 100,
+            "hz": 60,
+            "mobile": false
+        }
 }
