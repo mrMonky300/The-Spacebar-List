@@ -70,6 +70,13 @@
             "percent": 100,
             "hz": 240,
             "mobile": false
+        },
+        {
+            "user": "Jorser",
+            "link": "https://www.youtube.com/live/q4fVXLROpOg",
+            "percent": 100,
+            "hz": 60,
+            "mobile": false
         }
     ]
 }
