@@ -20,6 +20,13 @@
             "percent": 100,
             "hz": 60,
             "mobile": false
+        },
+        {
+            "user": "Darnex",
+            "link": "https://www.youtube.com/watch?v=VOYEVCy--9Q",
+            "percent": 100,
+            "hz": 60,
+            "mobile": false
         }
 
     ]
