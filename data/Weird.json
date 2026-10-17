@@ -8,6 +8,13 @@
     "percentToQualify": "64",
     "password": "Copyable",
     "records": [
+        {
+            "user": "Jorser",
+            "link": "https://www.youtube.com/live/-i91wUj65LM",
+            "percent": 100,
+            "hz": 60,
+            "mobile": false
+        }
     ]
 }
 
