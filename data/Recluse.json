@@ -7,6 +7,14 @@
     "verification": "https://youtu.be/o52DFBonlxo",
     "percentToQualify": "50",
     "password": "Copyable",
-    "records": [
+    "records": [ 
+        {
+        
+            "user": "GriddyGMD",
+            "link": "https://www.youtube.com/watch?v=NxUuqJYBg6s",
+            "percent": 100,
+            "hz": 144,
+            "mobile": false
+        },
     ]
 }
