@@ -14,6 +14,13 @@
             "percent": 100,
             "hz": 240,
             "mobile": false
+        },
+        {
+            "user": "bigcatman11",
+            "link": "https://www.youtube.com/watch?v=oVTME_LNSVY",
+            "percent": 100,
+            "hz": 380,
+            "mobile": false
         }
     ]
 }
