@@ -26,11 +26,18 @@
     "hz": 240,
     "mobile": false
 },
-        {
+{
     "user": "Darnex",
     "link": "https://www.youtube.com/watch?v=0cKPh8Rj0-A",
     "percent": 100,
     "hz": 240,
+    "mobile": false
+},
+        {
+    "user": "bigcatman11",
+    "link": "https://www.youtube.com/watch?v=v-jP0iUM_lI",
+    "percent": 100,
+    "hz": 380,
     "mobile": false
 }
 
