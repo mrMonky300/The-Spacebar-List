@@ -28,6 +28,13 @@
             "percent": 100,
             "hz": 60,
             "mobile": false
-        }
+        },
+        {
+            "user": "GriddyGMD",
+            "link": "https://www.youtube.com/watch?v=pcEOOocwjmE",
+            "percent": 100,
+            "hz": 200,
+            "mobile": false
+        },
     ]
 }
