@@ -27,7 +27,15 @@
             "percent": 100,
             "hz": 60,
             "mobile": false
-        }
+        },
+        {
+    "user": "Elyxyt",
+    "link": "https://www.youtube.com/watch?v=_qO2YzKulu4",
+    "percent": 100,
+    "hz": 360,
+    "mobile": false
+}
+
 
     ]
 }
