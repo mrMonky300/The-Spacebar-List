@@ -14,13 +14,7 @@
             "percent": 100,
             "hz": 60,
             "mobile": false
-        },
-        {
-            "user": "MrMonky300",
-            "link": "https://www.youtube.com/watch?v=EweXK_BSS6Y",
-            "percent": 100,
-            "hz": 240,
-            "mobile": false
         }
+       
     ]
 }
