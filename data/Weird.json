@@ -14,7 +14,15 @@
             "percent": 100,
             "hz": 60,
             "mobile": false
-        }
+        },
+        {
+    "user": "Operus",
+    "link": "https://www.youtube.com/watch?v=30S3mOmUTT0",
+    "percent": 100,
+    "hz": 120,
+    "mobile": false
+}
+
     ]
 }
 
