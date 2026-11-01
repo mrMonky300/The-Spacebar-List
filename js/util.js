@@ -1,12 +1,34 @@
-// https://stackoverflow.com/questions/3452546/how-do-i-get-the-youtube-video-id-from-a-url
+
 export function getYoutubeIdFromUrl(url) {
     return url.match(
         /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/,
     )?.[1] ?? '';
 }
 
+export function getMedalIdFromUrl(url) {
+    return url.match(
+        /medal\.tv\/(?:games\/[^/]+\/clips\/|clips\/)([a-zA-Z0-9_-]+)/,
+    )?.[1] ?? '';
+}
+
 export function embed(video) {
-    return `https://www.youtube.com/embed/${getYoutubeIdFromUrl(video)}`;
+    if (!video) return "";
+
+    // YouTube
+    const youtubeId = getYoutubeIdFromUrl(video);
+
+    if (youtubeId) {
+        return `https://www.youtube.com/embed/${youtubeId}`;
+    }
+
+    // Medal.tv
+    const medalId = getMedalIdFromUrl(video);
+
+    if (medalId) {
+        return `https://medal.tv/clip/${medalId}`;
+    }
+
+    return "";
 }
 
 export function localize(num) {
@@ -21,13 +43,10 @@ export function getThumbnailFromId(id) {
 export function shuffle(array) {
     let currentIndex = array.length, randomIndex;
 
-    // While there remain elements to shuffle.
     while (currentIndex != 0) {
-        // Pick a remaining element.
         randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
-        // And swap it with the current element.
         [array[currentIndex], array[randomIndex]] = [
             array[randomIndex],
             array[currentIndex],
