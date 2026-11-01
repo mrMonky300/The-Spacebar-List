@@ -1,50 +1,92 @@
 
 export function getYoutubeIdFromUrl(url) {
-    return url.match(
-        /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/,
-    )?.[1] ?? '';
+    if (!url) return '';
+
+    try {
+        const parsed = new URL(url);
+
+        if (
+            parsed.hostname === 'youtu.be' ||
+            parsed.hostname.endsWith('.youtu.be')
+        ) {
+            return parsed.pathname.split('/').filter(Boolean)[0] || '';
+        }
+
+        if (
+            parsed.hostname.includes('youtube.com') ||
+            parsed.hostname.includes('youtube-nocookie.com')
+        ) {
+            return (
+                parsed.searchParams.get('v') ||
+                parsed.pathname.match(/\/(?:embed|shorts|live)\/([^/]+)/)?.[1] ||
+                ''
+            );
+        }
+    } catch {
+        return '';
+    }
+
+    return '';
 }
 
 export function getMedalIdFromUrl(url) {
-    return url.match(
-        /medal\.tv\/(?:games\/[^/]+\/clips\/|clips\/)([a-zA-Z0-9_-]+)/,
-    )?.[1] ?? '';
+    if (!url) return '';
+
+    try {
+        const parsed = new URL(url);
+
+        if (!parsed.hostname.endsWith('medal.tv')) {
+            return '';
+        }
+
+        const match = parsed.pathname.match(
+            /\/(?:games\/[^/]+\/clips|clips)\/([^/]+)/
+        );
+
+        return match?.[1] || '';
+    } catch {
+        return '';
+    }
 }
 
 export function embed(video) {
-    if (!video) return "";
+    if (!video) return '';
+
+    // Medal.tv
+    if (video.includes('medal.tv')) {
+        const medalId = getMedalIdFromUrl(video);
+
+        if (!medalId) return '';
+
+        return `https://medal.tv/clip/${encodeURIComponent(medalId)}`;
+    }
 
     // YouTube
     const youtubeId = getYoutubeIdFromUrl(video);
 
     if (youtubeId) {
-        return `https://www.youtube.com/embed/${youtubeId}`;
+        return `https://www.youtube.com/embed/${encodeURIComponent(youtubeId)}`;
     }
 
-    // Medal.tv
-    const medalId = getMedalIdFromUrl(video);
-
-    if (medalId) {
-        return `https://medal.tv/clip/${medalId}`;
-    }
-
-    return "";
+    return '';
 }
 
 export function localize(num) {
-    return num.toLocaleString(undefined, { minimumFractionDigits: 3 });
+    return num.toLocaleString(undefined, {
+        minimumFractionDigits: 3
+    });
 }
 
 export function getThumbnailFromId(id) {
     return `https://img.youtube.com/vi/${id}/mqdefault.jpg`;
 }
 
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+// Shuffle array
 export function shuffle(array) {
-    let currentIndex = array.length, randomIndex;
+    let currentIndex = array.length;
 
-    while (currentIndex != 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
+    while (currentIndex !== 0) {
+        const randomIndex = Math.floor(Math.random() * currentIndex);
         currentIndex--;
 
         [array[currentIndex], array[randomIndex]] = [
