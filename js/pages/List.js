@@ -36,15 +36,28 @@ export default {
                     </tr>
                 </table>
             </div>
+
             <div class="level-container">
                 <div class="level" v-if="level">
                     <h1>{{ level.name }}</h1>
-                    <LevelAuthors :author="level.author" :creators="level.creators" :verifier="level.verifier"></LevelAuthors>
-                    <iframe class="video" id="videoframe" :src="video" frameborder="0"></iframe>
+
+                    <LevelAuthors
+                        :author="level.author"
+                        :creators="level.creators"
+                        :verifier="level.verifier"
+                    ></LevelAuthors>
+
+                    <iframe
+                        class="video"
+                        id="videoframe"
+                        :src="video"
+                        frameborder="0"
+                    ></iframe>
+
                     <ul class="stats">
                         <li>
                             <div class="type-title-sm">Points when completed</div>
-                            <p>{{ score(selected + 1, 100, level.percentToQualify) }}</p>
+                            <p>{{ score(selected + 1, 100, level.percentToQualify, list.length) }}</p>
                         </li>
                         <li>
                             <div class="type-title-sm">ID</div>
@@ -55,20 +68,39 @@ export default {
                             <p>{{ level.password || 'Free to Copy' }}</p>
                         </li>
                     </ul>
+
                     <h2>Records</h2>
-                    <p v-if="selected + 1 <= 75"><strong>{{ level.percentToQualify }}%</strong> or better to qualify</p>
-                    <p v-else-if="selected +1 <= 150"><strong>100%</strong> or better to qualify</p>
-                    <p v-else>This level does not accept new records.</p>
+
+                    <p v-if="selected + 1 <= 75">
+                        <strong>{{ level.percentToQualify }}%</strong> or better to qualify
+                    </p>
+                    <p v-else-if="selected + 1 <= 150">
+                        <strong>100%</strong> or better to qualify
+                    </p>
+                    <p v-else>
+                        This level does not accept new records.
+                    </p>
+
                     <table class="records">
                         <tr v-for="record in level.records" class="record">
                             <td class="percent">
                                 <p>{{ record.percent }}%</p>
                             </td>
                             <td class="user">
-                                <a :href="record.link" target="_blank" class="type-label-lg">{{ record.user }}</a>
+                                <a
+                                    :href="record.link"
+                                    target="_blank"
+                                    class="type-label-lg"
+                                >
+                                    {{ record.user }}
+                                </a>
                             </td>
                             <td class="mobile">
-                                <img v-if="record.mobile" :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`" alt="Mobile">
+                                <img
+                                    v-if="record.mobile"
+                                    :src="\`/assets/phone-landscape\${store.dark ? '-dark' : ''}.svg\`"
+                                    alt="Mobile"
+                                >
                             </td>
                             <td class="hz">
                                 <p>{{ record.hz }}Hz</p>
@@ -76,31 +108,51 @@ export default {
                         </tr>
                     </table>
                 </div>
-                <div v-else class="level" style="height: 100%; justify-content: center; align-items: center;">
+
+                <div
+                    v-else
+                    class="level"
+                    style="height: 100%; justify-content: center; align-items: center;"
+                >
                     <p>(ノಠ益ಠ)ノ彡┻━┻</p>
                 </div>
             </div>
+
             <div class="meta-container">
                 <div class="meta">
                     <div class="errors" v-show="errors.length > 0">
-                        <p class="error" v-for="error of errors">{{ error }}</p>
+                        <p class="error" v-for="error of errors">
+                            {{ error }}
+                        </p>
                     </div>
+
                     <template v-if="editors">
                         <h3>List Editors</h3>
                         <ol class="editors">
                             <li v-for="editor in editors">
-                                <img :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`" :alt="editor.role">
-                                <a v-if="editor.link" class="type-label-lg link" target="_blank" :href="editor.link">{{ editor.name }}</a>
+                                <img
+                                    :src="\`/assets/\${roleIconMap[editor.role]}\${store.dark ? '-dark' : ''}.svg\`"
+                                    :alt="editor.role"
+                                >
+                                <a
+                                    v-if="editor.link"
+                                    class="type-label-lg link"
+                                    target="_blank"
+                                    :href="editor.link"
+                                >
+                                    {{ editor.name }}
+                                </a>
                                 <p v-else>{{ editor.name }}</p>
                             </li>
                         </ol>
                     </template>
+
                     <h3>Submission Requirements</h3>
                     <p>
                         Achieved the record without using hacks
                     </p>
                     <p>
-                        Clicks and Handcam are <b>NEEDED<b>
+                        Clicks and Handcam are <b>NEEDED</b>
                     </p>
                     <p>
                         The recording must show the player touching the endwall + endscreen
@@ -112,6 +164,7 @@ export default {
             </div>
         </main>
     `,
+
     data: () => ({
         list: [],
         editors: [],
@@ -121,11 +174,17 @@ export default {
         roleIconMap,
         store
     }),
+
     computed: {
         level() {
-            return this.list[this.selected][0];
+            return this.list[this.selected]?.[0];
         },
+
         video() {
+            if (!this.level) {
+                return "";
+            }
+
             if (!this.level.showcase) {
                 return embed(this.level.verification);
             }
@@ -137,8 +196,9 @@ export default {
             );
         },
     },
+
     async mounted() {
-        // Hide loading spinner
+        // Load list and editors
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
@@ -155,6 +215,7 @@ export default {
                         return `Failed to load level. (${err}.json)`;
                     })
             );
+
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
             }
@@ -162,6 +223,7 @@ export default {
 
         this.loading = false;
     },
+
     methods: {
         embed,
         score,
