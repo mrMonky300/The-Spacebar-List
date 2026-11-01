@@ -16,27 +16,29 @@ export function score(rank, percent, minPercent, totalLevels) {
     const MIN_SCORE = 0.1;
     const MAX_SCORE = 250;
 
+    // Invalid rank
     if (rank < 1 || rank > totalLevels || totalLevels < 1) {
         return 0;
     }
 
+    // Only full completions allowed after rank 75
     if (rank > 75 && percent < 100) {
         return 0;
     }
 
-    // Calculate base score based on rank
+    // Calculate score based on rank
     let baseScore;
 
     if (totalLevels === 1) {
         baseScore = MAX_SCORE;
     } else {
-        baseScore = MIN_SCORE +
+        baseScore = MAX_SCORE -
             (MAX_SCORE - MIN_SCORE) *
             ((rank - 1) / (totalLevels - 1));
     }
 
     // Calculate percentage multiplier
-    let multiplier =
+    const multiplier =
         (percent - (minPercent - 1)) /
         (100 - (minPercent - 1));
 
@@ -47,9 +49,21 @@ export function score(rank, percent, minPercent, totalLevels) {
         result -= result / 3;
     }
 
+    result = Math.max(0, result);
+
+    if (percent != 100) {
+        return round(result);
+    }
+
     return Math.max(round(result), 0);
 }
 
+/**
+ * Round a number to the configured decimal scale.
+ *
+ * @param {Number} num Number to round
+ * @returns {Number}
+ */
 export function round(num) {
     if (!('' + num).includes('e')) {
         return +(Math.round(num + 'e+' + scale) + 'e-' + scale);
