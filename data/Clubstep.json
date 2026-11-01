@@ -24,7 +24,13 @@
             "link": "https://www.youtube.com/watch?v=h2DXyUenhDg",
             "percent": 100,
             "hz": 380
-        }   
-       
+        },
+        {
+            "user": "nevercore",
+            "link": "https://medal.tv/games/geometry-dash/clips/nQqY7NnlCtJzDST8T?invite=cr-MSxZN2ssNDc0NDI4NDA2",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false
+        }
     ]
 }
