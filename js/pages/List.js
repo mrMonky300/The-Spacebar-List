@@ -103,7 +103,7 @@ export default {
                                 >
                             </td>
                             <td class="hz">
-                                <p>{{ record.hz }}Hz</p>
+                                <p>{{ record.hz }}FPS</p>
                             </td>
                         </tr>
                     </table>
