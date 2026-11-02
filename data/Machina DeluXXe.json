@@ -14,7 +14,13 @@
             "percent": 100,
             "hz": 60,
             "mobile": false
+        },
+        {
+            "user": "nevercore",
+            "link": "https://medal.tv/games/geometry-dash/clips/nQNAQSC1qbFvTcBSt?invite=cr-MSw4c2csNDc0NDI4NDA2",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false
         }
-       
     ]
 }
