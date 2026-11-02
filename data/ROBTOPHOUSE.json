@@ -3,17 +3,9 @@
     "name": "ROBTOPHOUSE",
     "author": "Picosquishy",
     "creators": ["BlueHyperXD"],
-    "verifier": "Picosquishy",
-    "verification": "https://www.youtube.com/watch?v=kltwlKt24io",
+    "verifier": "Operus",
+    "verification": "https://www.youtube.com/watch?v=nOmEdEeaAxU",
     "percentToQualify": "75",
     "password": "Copyable",
-    "records": [{
-    "user": "Operus",
-    "link": "https://www.youtube.com/watch?v=nOmEdEeaAxU",
-    "percent": 100,
-    "hz": 120,
-    "mobile": false
-}
-
-    ]
+    "records": []
 }
