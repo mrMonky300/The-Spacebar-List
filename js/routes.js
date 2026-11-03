@@ -22,7 +22,7 @@ export default [
     },
 
     {
-        path: '/testpacks3814',
+        path: '/packs',
         component: Packs
     },
 
