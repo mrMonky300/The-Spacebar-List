@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Main Pack",
-        "color": "#DC143C",
+        "color": "#00000",
         "levels": [
             "Deadlocked",
             "Clubstep",
@@ -20,5 +20,27 @@
             "Bloodbath"
         ],
         "difficulty": "Platinum"
+    },
+    {
+        "id": 3,
+        "name": "Nine Circles Pack",
+        "color": "#9B35FF",
+        "levels": [
+            "Poltergeist",
+            "Nine Circles",
+            "Jawbreaker"
+        ],
+        "difficulty": "Diamond"
+    },
+    {
+        "id": 4,
+        "name": "Classic Demon Pack",
+        "color": "#A0A0A0",
+        "levels": [
+            "The Lightning Road",
+            "Platinum Adventure",
+            "The Nightmare"
+        ],
+        "difficulty": "Bronze"
     }
 ]
