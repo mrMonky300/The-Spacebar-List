@@ -30,7 +30,7 @@
             "Nine Circles",
             "Jawbreaker"
         ],
-        "difficulty": "Diamond"
+        "difficulty": "Gold"
     },
     {
         "id": 4,
@@ -53,5 +53,27 @@
             "The Nightmare"
         ],
         "difficulty": "Bronze"
+    },
+    {
+        "id": 6,
+        "name": "Classic Extreme Pack",
+        "color": "#E63946",
+        "levels": [
+            "Bloodbath",
+            "Allegiance",
+            "Cataclysm"
+        ],
+        "difficulty": "Platinum"
+    },
+    {
+        "id": 7,
+        "name": "Wave Pack",
+        "color": "#E63946",
+        "levels": [
+            "SAkuPRnCirclEsspam",
+            "Paracosm Circles",
+            "Sakupen Egg"
+        ],
+        "difficulty": "Diamond"
     }
 ]
