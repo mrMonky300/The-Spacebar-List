@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "The Main Levels Pack",
+        "name": "Main Pack",
         "color": "#DC143C",
         "levels": [
             "Deadlocked",
@@ -9,5 +9,16 @@
             "Theory of Everything 2"
         ],
         "difficulty": "Bronze"
+    },
+    {
+        "id": 2,
+        "name": "Top 1 Pack",
+        "color": "#DC143C",
+        "levels": [
+            "Athanatos",
+            "Blade of Justice",
+            "Bloodbath"
+        ],
+        "difficulty": "Platinum"
     }
 ]
