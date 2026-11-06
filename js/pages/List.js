@@ -1,3 +1,4 @@
+
 import { store } from "../main.js";
 import { embed } from "../util.js";
 import { score } from "../score.js";
@@ -16,6 +17,7 @@ const roleIconMap = {
 
 export default {
     components: { Spinner, LevelAuthors },
+
     template: `
         <main v-if="loading">
             <Spinner></Spinner>
@@ -197,12 +199,20 @@ export default {
         },
     },
 
+    watch: {
+        '$route.query.level': {
+            handler(value) {
+                if (value && this.list.length > 0) {
+                    this.selectLevelFromQuery(value);
+                }
+            }
+        }
+    },
+
     async mounted() {
-        // Load list and editors
         this.list = await fetchList();
         this.editors = await fetchEditors();
 
-        // Error handling
         if (!this.list) {
             this.errors = [
                 "Failed to load list. Retry in a few minutes or notify list staff.",
@@ -219,6 +229,12 @@ export default {
             if (!this.editors) {
                 this.errors.push("Failed to load list editors.");
             }
+
+            const requestedLevel = this.$route.query.level;
+
+            if (requestedLevel) {
+                this.selectLevelFromQuery(requestedLevel);
+            }
         }
 
         this.loading = false;
@@ -227,5 +243,23 @@ export default {
     methods: {
         embed,
         score,
+
+        selectLevelFromQuery(identifier) {
+            const search = String(identifier).trim().toLowerCase();
+
+            const index = this.list.findIndex(([level]) => {
+                if (!level) return false;
+
+                return String(level.name || "")
+                    .trim()
+                    .toLowerCase() === search;
+            });
+
+            if (index !== -1) {
+                this.selected = index;
+            } else {
+                console.warn("Level not found:", identifier);
+            }
+        },
     },
 };
