@@ -68,12 +68,23 @@
     {
         "id": 8,
         "name": "Azure Pack",
-        "color": "#00BFFF",
+        "color": "#89cff0",
         "levels": [
             "Jawbreaker",
             "Blue Hell",
             "Shiver"
         ],
         "difficulty": "Iron"
+    },
+    {
+        "id": 9,
+        "name": "Challenge Pack",
+        "color": "#FFFF00",
+        "levels": [
+            "Shitty Unknown Trial",
+            "SAkuPRnCirclEssspam",
+            "samsung washing mach"
+        ],
+        "difficulty": "Diamond"
     } 
 ]
