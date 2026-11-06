@@ -8,7 +8,6 @@
     "percentToQualify": "73",
     "password": "Copyable",
     "records": [
-        "records": [
         {
             "user": "Darnex",
             "link": "https://www.youtube.com/watch?v=VQlfT-dWDH8",
@@ -16,6 +15,5 @@
             "hz": 720,
             "mobile": false
         }
-    ]
     ]
 }
