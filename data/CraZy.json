@@ -7,5 +7,15 @@
     "verification": "https://medal.tv/games/geometry-dash/clips/nQrcJQYDCLaulxWtQ?invite=cr-MSw4b08sNDc0NDI4NDA2",
     "percentToQualify": "73",
     "password": "Copyable",
-    "records": []
+    "records": [
+        "records": [
+        {
+            "user": "Darnex",
+            "link": "https://www.youtube.com/watch?v=VQlfT-dWDH8",
+            "percent": 100,
+            "hz": 720,
+            "mobile": false
+        }
+    ]
+    ]
 }
