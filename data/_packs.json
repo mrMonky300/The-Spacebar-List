@@ -64,5 +64,16 @@
             "Sakupen Egg"
         ],
         "difficulty": "Diamond"
-    }
+    },
+    {
+        "id": 8,
+        "name": "Azure Pack",
+        "color": "#00BFFF",
+        "levels": [
+            "Jawbreaker",
+            "Blue Hell",
+            "Shiver"
+        ],
+        "difficulty": "Iron"
+    } 
 ]
