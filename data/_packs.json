@@ -44,17 +44,6 @@
         "difficulty": "Bronze"
     },
     {
-        "id": 5,
-        "name": "Classic Demon Pack",
-        "color": "#FF4545",
-        "levels": [
-            "The Lightning Road",
-            "Platinum Adventure",
-            "The Nightmare"
-        ],
-        "difficulty": "Bronze"
-    },
-    {
         "id": 6,
         "name": "Classic Extreme Pack",
         "color": "#E63946",
