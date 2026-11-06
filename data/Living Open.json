@@ -8,5 +8,12 @@
     "percentToQualify": "80",
     "password": "Locked",
     "records": [
+        {
+            "user": "nevercore",
+            "link": "https://medal.tv/games/geometry-dash/clips/nStfax5pymkGp0Gof?invite=cr-MSxVSGcsNDc0NDI4NDA2",
+            "percent": 100,
+            "hz": 240,
+            "mobile": false
+        }
     ]
 }
